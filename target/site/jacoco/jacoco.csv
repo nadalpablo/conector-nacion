@@ -1,0 +1,46 @@
+GROUP,PACKAGE,CLASS,INSTRUCTION_MISSED,INSTRUCTION_COVERED,BRANCH_MISSED,BRANCH_COVERED,LINE_MISSED,LINE_COVERED,COMPLEXITY_MISSED,COMPLEXITY_COVERED,METHOD_MISSED,METHOD_COVERED
+WU 100BillersPlus :: Connector nacion-servicios-connector,com.wu.billersplus.connector.service,ProxyServiceImpl,274,0,10,0,61,0,16,0,11,0
+WU 100BillersPlus :: Connector nacion-servicios-connector,com.wu.billersplus.connector.service,AnalizarErrorServiceImpl,91,0,6,0,16,0,8,0,5,0
+WU 100BillersPlus :: Connector nacion-servicios-connector,com.wu.billersplus.connector.service,ProxyFactoryImpl,7,0,0,0,2,0,2,0,2,0
+WU 100BillersPlus :: Connector nacion-servicios-connector,com.wu.billersplus.connector.service,ProxyServiceImpl.new X509TrustManager() {...},10,0,0,0,4,0,4,0,4,0
+WU 100BillersPlus :: Connector nacion-servicios-connector,com.wu.billersplus.connector.service,ProxyServiceImpl.new HostnameVerifier() {...},8,0,0,0,2,0,2,0,2,0
+WU 100BillersPlus :: Connector nacion-servicios-connector,com.wu.billersplus.connector.service,ProxyServiceImpl.new Authenticator() {...},21,0,0,0,2,0,2,0,2,0
+WU 100BillersPlus :: Connector nacion-servicios-connector,com.wu.billersplus.connector.service,EchoServiceImpl,156,0,8,0,40,0,8,0,4,0
+WU 100BillersPlus :: Connector nacion-servicios-connector,us.inswitch.mts.exceptions.xsd,ServiceException,3,0,0,0,1,0,1,0,1,0
+WU 100BillersPlus :: Connector nacion-servicios-connector,us.inswitch.mts.exceptions.xsd,ObjectFactory,7,0,0,0,3,0,2,0,2,0
+WU 100BillersPlus :: Connector nacion-servicios-connector,com.wu.billersplus.connector.utils,BarcodeUtils,3,29,0,0,1,6,1,6,1,6
+WU 100BillersPlus :: Connector nacion-servicios-connector,us.inswitch.mts.webservices.dto.service.request.xsd,DTORequestCashOutConfirm,87,0,0,0,37,0,25,0,25,0
+WU 100BillersPlus :: Connector nacion-servicios-connector,us.inswitch.mts.webservices.dto.service.request.xsd,DTORequestUtfiAutoReversion,31,0,0,0,13,0,9,0,9,0
+WU 100BillersPlus :: Connector nacion-servicios-connector,us.inswitch.mts.webservices.dto.service.request.xsd,DTORequestCashInPre,80,0,0,0,34,0,23,0,23,0
+WU 100BillersPlus :: Connector nacion-servicios-connector,us.inswitch.mts.webservices.dto.service.request.xsd,DTORequestCashInConfirm,80,0,0,0,34,0,23,0,23,0
+WU 100BillersPlus :: Connector nacion-servicios-connector,us.inswitch.mts.webservices.dto.service.request.xsd,DTORequestCashOutPre,87,0,0,0,37,0,25,0,25,0
+WU 100BillersPlus :: Connector nacion-servicios-connector,us.inswitch.mts.webservices.dto.service.request.xsd,DTORequestAgentAutoReversion,38,0,0,0,16,0,11,0,11,0
+WU 100BillersPlus :: Connector nacion-servicios-connector,us.inswitch.mts.webservices.dto.service.request.xsd,ObjectFactory,546,0,0,0,76,0,63,0,63,0
+WU 100BillersPlus :: Connector nacion-servicios-connector,com.wu.billersplus.connector.transformers,BillerTransformer,503,7,56,0,120,2,36,2,8,2
+WU 100BillersPlus :: Connector nacion-servicios-connector,us.inswitch.mts.model.xsd,ObjectFactory,36,0,0,0,7,0,5,0,5,0
+WU 100BillersPlus :: Connector nacion-servicios-connector,us.inswitch.mts.model.xsd,TransactionValues,17,0,0,0,7,0,5,0,5,0
+WU 100BillersPlus :: Connector nacion-servicios-connector,us.inswitch.mts.webservices.dto.service.response.xsd,DTOResponseCashInConfirm,42,0,2,0,16,0,11,0,10,0
+WU 100BillersPlus :: Connector nacion-servicios-connector,us.inswitch.mts.webservices.dto.service.response.xsd,ObjectFactory,190,0,0,0,29,0,26,0,26,0
+WU 100BillersPlus :: Connector nacion-servicios-connector,us.inswitch.mts.webservices.dto.service.response.xsd,DTOResponseCashOutPre,31,0,0,0,13,0,9,0,9,0
+WU 100BillersPlus :: Connector nacion-servicios-connector,us.inswitch.mts.webservices.dto.service.response.xsd,DTOResponseCashOutConfirm,42,0,2,0,16,0,11,0,10,0
+WU 100BillersPlus :: Connector nacion-servicios-connector,us.inswitch.mts.webservices.dto.service.response.xsd,DTOResponseUtfiAutoReversion,42,0,2,0,16,0,11,0,10,0
+WU 100BillersPlus :: Connector nacion-servicios-connector,us.inswitch.mts.webservices.dto.service.response.xsd,DTOResponseAgentAutoReversion,42,0,2,0,16,0,11,0,10,0
+WU 100BillersPlus :: Connector nacion-servicios-connector,us.inswitch.mts.webservices.dto.service.response.xsd,DTOResponseCashInPre,31,0,0,0,13,0,9,0,9,0
+WU 100BillersPlus :: Connector nacion-servicios-connector,us.inswitch.mts.webservices.bn,CashInPreRed,10,0,0,0,4,0,3,0,3,0
+WU 100BillersPlus :: Connector nacion-servicios-connector,us.inswitch.mts.webservices.bn,CashInConfirmRedResponse,10,0,0,0,4,0,3,0,3,0
+WU 100BillersPlus :: Connector nacion-servicios-connector,us.inswitch.mts.webservices.bn,AgentAutoReversionRed,10,0,0,0,4,0,3,0,3,0
+WU 100BillersPlus :: Connector nacion-servicios-connector,us.inswitch.mts.webservices.bn,MTSServiceREDServiceException_Exception,30,0,0,0,13,0,6,0,6,0
+WU 100BillersPlus :: Connector nacion-servicios-connector,us.inswitch.mts.webservices.bn,AgentAutoReversionRedResponse,10,0,0,0,4,0,3,0,3,0
+WU 100BillersPlus :: Connector nacion-servicios-connector,us.inswitch.mts.webservices.bn,CashInPreRedResponse,10,0,0,0,4,0,3,0,3,0
+WU 100BillersPlus :: Connector nacion-servicios-connector,us.inswitch.mts.webservices.bn,MTSServiceREDServiceException,10,0,0,0,4,0,3,0,3,0
+WU 100BillersPlus :: Connector nacion-servicios-connector,us.inswitch.mts.webservices.bn,UtfiAutoReversionRed,10,0,0,0,4,0,3,0,3,0
+WU 100BillersPlus :: Connector nacion-servicios-connector,us.inswitch.mts.webservices.bn,CashOutConfirmRedResponse,10,0,0,0,4,0,3,0,3,0
+WU 100BillersPlus :: Connector nacion-servicios-connector,us.inswitch.mts.webservices.bn,MTSServiceRED,172,0,0,0,38,0,19,0,19,0
+WU 100BillersPlus :: Connector nacion-servicios-connector,us.inswitch.mts.webservices.bn,CashOutPreRedResponse,10,0,0,0,4,0,3,0,3,0
+WU 100BillersPlus :: Connector nacion-servicios-connector,us.inswitch.mts.webservices.bn,CashOutConfirmRed,10,0,0,0,4,0,3,0,3,0
+WU 100BillersPlus :: Connector nacion-servicios-connector,us.inswitch.mts.webservices.bn,CashInConfirmRed,10,0,0,0,4,0,3,0,3,0
+WU 100BillersPlus :: Connector nacion-servicios-connector,us.inswitch.mts.webservices.bn,UtfiAutoReversionRedResponse,10,0,0,0,4,0,3,0,3,0
+WU 100BillersPlus :: Connector nacion-servicios-connector,us.inswitch.mts.webservices.bn,CashOutPreRed,10,0,0,0,4,0,3,0,3,0
+WU 100BillersPlus :: Connector nacion-servicios-connector,us.inswitch.mts.webservices.bn,ObjectFactory,208,0,0,0,36,0,28,0,28,0
+WU 100BillersPlus :: Connector nacion-servicios-connector,com.wu.billersplus.connector.entities,DeudaParameters,3,0,0,0,1,0,1,0,1,0
+WU 100BillersPlus :: Connector nacion-servicios-connector,com.wu.billersplus.connector.entities,ParametrosConector,3,0,0,0,1,0,1,0,1,0

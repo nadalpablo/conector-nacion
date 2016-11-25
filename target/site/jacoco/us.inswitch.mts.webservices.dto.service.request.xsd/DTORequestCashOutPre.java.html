@@ -1,0 +1,372 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>DTORequestCashOutPre.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">WU 100BillersPlus :: Connector nacion-servicios-connector</a> &gt; <a href="index.source.html" class="el_package">us.inswitch.mts.webservices.dto.service.request.xsd</a> &gt; <span class="el_source">DTORequestCashOutPre.java</span></div><h1>DTORequestCashOutPre.java</h1><pre class="source lang-java linenums">
+package us.inswitch.mts.webservices.dto.service.request.xsd;
+
+import javax.xml.bind.JAXBElement;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElementRef;
+import javax.xml.bind.annotation.XmlType;
+
+
+/**
+ * &lt;p&gt;Clase Java para DTORequestCashOutPre complex type.
+ * 
+ * &lt;p&gt;El siguiente fragmento de esquema especifica el contenido que se espera que haya en esta clase.
+ * 
+ * &lt;pre&gt;
+ * &amp;lt;complexType name=&quot;DTORequestCashOutPre&quot;&amp;gt;
+ *   &amp;lt;complexContent&amp;gt;
+ *     &amp;lt;restriction base=&quot;{http://www.w3.org/2001/XMLSchema}anyType&quot;&amp;gt;
+ *       &amp;lt;sequence&amp;gt;
+ *         &amp;lt;element name=&quot;amount&quot; type=&quot;{http://www.w3.org/2001/XMLSchema}double&quot; minOccurs=&quot;0&quot;/&amp;gt;
+ *         &amp;lt;element name=&quot;brandId&quot; type=&quot;{http://www.w3.org/2001/XMLSchema}int&quot; minOccurs=&quot;0&quot;/&amp;gt;
+ *         &amp;lt;element name=&quot;currency&quot; type=&quot;{http://www.w3.org/2001/XMLSchema}int&quot; minOccurs=&quot;0&quot;/&amp;gt;
+ *         &amp;lt;element name=&quot;document&quot; type=&quot;{http://www.w3.org/2001/XMLSchema}string&quot; minOccurs=&quot;0&quot;/&amp;gt;
+ *         &amp;lt;element name=&quot;language&quot; type=&quot;{http://www.w3.org/2001/XMLSchema}string&quot; minOccurs=&quot;0&quot;/&amp;gt;
+ *         &amp;lt;element name=&quot;msisdnSource&quot; type=&quot;{http://www.w3.org/2001/XMLSchema}string&quot; minOccurs=&quot;0&quot;/&amp;gt;
+ *         &amp;lt;element name=&quot;msisdnTarget&quot; type=&quot;{http://www.w3.org/2001/XMLSchema}string&quot; minOccurs=&quot;0&quot;/&amp;gt;
+ *         &amp;lt;element name=&quot;otp&quot; type=&quot;{http://www.w3.org/2001/XMLSchema}string&quot; minOccurs=&quot;0&quot;/&amp;gt;
+ *         &amp;lt;element name=&quot;password&quot; type=&quot;{http://www.w3.org/2001/XMLSchema}string&quot; minOccurs=&quot;0&quot;/&amp;gt;
+ *         &amp;lt;element name=&quot;pin&quot; type=&quot;{http://www.w3.org/2001/XMLSchema}string&quot; minOccurs=&quot;0&quot;/&amp;gt;
+ *         &amp;lt;element name=&quot;user&quot; type=&quot;{http://www.w3.org/2001/XMLSchema}string&quot; minOccurs=&quot;0&quot;/&amp;gt;
+ *         &amp;lt;element name=&quot;utfi&quot; type=&quot;{http://www.w3.org/2001/XMLSchema}string&quot; minOccurs=&quot;0&quot;/&amp;gt;
+ *       &amp;lt;/sequence&amp;gt;
+ *     &amp;lt;/restriction&amp;gt;
+ *   &amp;lt;/complexContent&amp;gt;
+ * &amp;lt;/complexType&amp;gt;
+ * &lt;/pre&gt;
+ * 
+ * 
+ */
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(name = &quot;DTORequestCashOutPre&quot;, propOrder = {
+    &quot;amount&quot;,
+    &quot;brandId&quot;,
+    &quot;currency&quot;,
+    &quot;document&quot;,
+    &quot;language&quot;,
+    &quot;msisdnSource&quot;,
+    &quot;msisdnTarget&quot;,
+    &quot;otp&quot;,
+    &quot;password&quot;,
+    &quot;pin&quot;,
+    &quot;user&quot;,
+    &quot;utfi&quot;
+})
+<span class="nc" id="L56">public class DTORequestCashOutPre {</span>
+
+    @XmlElementRef(name = &quot;amount&quot;, namespace = &quot;http://request.service.dto.webservices.mts.inswitch.us/xsd&quot;, type = JAXBElement.class, required = false)
+    protected JAXBElement&lt;Double&gt; amount;
+    @XmlElementRef(name = &quot;brandId&quot;, namespace = &quot;http://request.service.dto.webservices.mts.inswitch.us/xsd&quot;, type = JAXBElement.class, required = false)
+    protected JAXBElement&lt;Integer&gt; brandId;
+    @XmlElementRef(name = &quot;currency&quot;, namespace = &quot;http://request.service.dto.webservices.mts.inswitch.us/xsd&quot;, type = JAXBElement.class, required = false)
+    protected JAXBElement&lt;Integer&gt; currency;
+    @XmlElementRef(name = &quot;document&quot;, namespace = &quot;http://request.service.dto.webservices.mts.inswitch.us/xsd&quot;, type = JAXBElement.class, required = false)
+    protected JAXBElement&lt;String&gt; document;
+    @XmlElementRef(name = &quot;language&quot;, namespace = &quot;http://request.service.dto.webservices.mts.inswitch.us/xsd&quot;, type = JAXBElement.class, required = false)
+    protected JAXBElement&lt;String&gt; language;
+    @XmlElementRef(name = &quot;msisdnSource&quot;, namespace = &quot;http://request.service.dto.webservices.mts.inswitch.us/xsd&quot;, type = JAXBElement.class, required = false)
+    protected JAXBElement&lt;String&gt; msisdnSource;
+    @XmlElementRef(name = &quot;msisdnTarget&quot;, namespace = &quot;http://request.service.dto.webservices.mts.inswitch.us/xsd&quot;, type = JAXBElement.class, required = false)
+    protected JAXBElement&lt;String&gt; msisdnTarget;
+    @XmlElementRef(name = &quot;otp&quot;, namespace = &quot;http://request.service.dto.webservices.mts.inswitch.us/xsd&quot;, type = JAXBElement.class, required = false)
+    protected JAXBElement&lt;String&gt; otp;
+    @XmlElementRef(name = &quot;password&quot;, namespace = &quot;http://request.service.dto.webservices.mts.inswitch.us/xsd&quot;, type = JAXBElement.class, required = false)
+    protected JAXBElement&lt;String&gt; password;
+    @XmlElementRef(name = &quot;pin&quot;, namespace = &quot;http://request.service.dto.webservices.mts.inswitch.us/xsd&quot;, type = JAXBElement.class, required = false)
+    protected JAXBElement&lt;String&gt; pin;
+    @XmlElementRef(name = &quot;user&quot;, namespace = &quot;http://request.service.dto.webservices.mts.inswitch.us/xsd&quot;, type = JAXBElement.class, required = false)
+    protected JAXBElement&lt;String&gt; user;
+    @XmlElementRef(name = &quot;utfi&quot;, namespace = &quot;http://request.service.dto.webservices.mts.inswitch.us/xsd&quot;, type = JAXBElement.class, required = false)
+    protected JAXBElement&lt;String&gt; utfi;
+
+    /**
+     * Obtiene el valor de la propiedad amount.
+     * 
+     * @return
+     *     possible object is
+     *     {@link JAXBElement }{@code &lt;}{@link Double }{@code &gt;}
+     *     
+     */
+    public JAXBElement&lt;Double&gt; getAmount() {
+<span class="nc" id="L92">        return amount;</span>
+    }
+
+    /**
+     * Define el valor de la propiedad amount.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link JAXBElement }{@code &lt;}{@link Double }{@code &gt;}
+     *     
+     */
+    public void setAmount(JAXBElement&lt;Double&gt; value) {
+<span class="nc" id="L104">        this.amount = value;</span>
+<span class="nc" id="L105">    }</span>
+
+    /**
+     * Obtiene el valor de la propiedad brandId.
+     * 
+     * @return
+     *     possible object is
+     *     {@link JAXBElement }{@code &lt;}{@link Integer }{@code &gt;}
+     *     
+     */
+    public JAXBElement&lt;Integer&gt; getBrandId() {
+<span class="nc" id="L116">        return brandId;</span>
+    }
+
+    /**
+     * Define el valor de la propiedad brandId.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link JAXBElement }{@code &lt;}{@link Integer }{@code &gt;}
+     *     
+     */
+    public void setBrandId(JAXBElement&lt;Integer&gt; value) {
+<span class="nc" id="L128">        this.brandId = value;</span>
+<span class="nc" id="L129">    }</span>
+
+    /**
+     * Obtiene el valor de la propiedad currency.
+     * 
+     * @return
+     *     possible object is
+     *     {@link JAXBElement }{@code &lt;}{@link Integer }{@code &gt;}
+     *     
+     */
+    public JAXBElement&lt;Integer&gt; getCurrency() {
+<span class="nc" id="L140">        return currency;</span>
+    }
+
+    /**
+     * Define el valor de la propiedad currency.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link JAXBElement }{@code &lt;}{@link Integer }{@code &gt;}
+     *     
+     */
+    public void setCurrency(JAXBElement&lt;Integer&gt; value) {
+<span class="nc" id="L152">        this.currency = value;</span>
+<span class="nc" id="L153">    }</span>
+
+    /**
+     * Obtiene el valor de la propiedad document.
+     * 
+     * @return
+     *     possible object is
+     *     {@link JAXBElement }{@code &lt;}{@link String }{@code &gt;}
+     *     
+     */
+    public JAXBElement&lt;String&gt; getDocument() {
+<span class="nc" id="L164">        return document;</span>
+    }
+
+    /**
+     * Define el valor de la propiedad document.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link JAXBElement }{@code &lt;}{@link String }{@code &gt;}
+     *     
+     */
+    public void setDocument(JAXBElement&lt;String&gt; value) {
+<span class="nc" id="L176">        this.document = value;</span>
+<span class="nc" id="L177">    }</span>
+
+    /**
+     * Obtiene el valor de la propiedad language.
+     * 
+     * @return
+     *     possible object is
+     *     {@link JAXBElement }{@code &lt;}{@link String }{@code &gt;}
+     *     
+     */
+    public JAXBElement&lt;String&gt; getLanguage() {
+<span class="nc" id="L188">        return language;</span>
+    }
+
+    /**
+     * Define el valor de la propiedad language.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link JAXBElement }{@code &lt;}{@link String }{@code &gt;}
+     *     
+     */
+    public void setLanguage(JAXBElement&lt;String&gt; value) {
+<span class="nc" id="L200">        this.language = value;</span>
+<span class="nc" id="L201">    }</span>
+
+    /**
+     * Obtiene el valor de la propiedad msisdnSource.
+     * 
+     * @return
+     *     possible object is
+     *     {@link JAXBElement }{@code &lt;}{@link String }{@code &gt;}
+     *     
+     */
+    public JAXBElement&lt;String&gt; getMsisdnSource() {
+<span class="nc" id="L212">        return msisdnSource;</span>
+    }
+
+    /**
+     * Define el valor de la propiedad msisdnSource.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link JAXBElement }{@code &lt;}{@link String }{@code &gt;}
+     *     
+     */
+    public void setMsisdnSource(JAXBElement&lt;String&gt; value) {
+<span class="nc" id="L224">        this.msisdnSource = value;</span>
+<span class="nc" id="L225">    }</span>
+
+    /**
+     * Obtiene el valor de la propiedad msisdnTarget.
+     * 
+     * @return
+     *     possible object is
+     *     {@link JAXBElement }{@code &lt;}{@link String }{@code &gt;}
+     *     
+     */
+    public JAXBElement&lt;String&gt; getMsisdnTarget() {
+<span class="nc" id="L236">        return msisdnTarget;</span>
+    }
+
+    /**
+     * Define el valor de la propiedad msisdnTarget.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link JAXBElement }{@code &lt;}{@link String }{@code &gt;}
+     *     
+     */
+    public void setMsisdnTarget(JAXBElement&lt;String&gt; value) {
+<span class="nc" id="L248">        this.msisdnTarget = value;</span>
+<span class="nc" id="L249">    }</span>
+
+    /**
+     * Obtiene el valor de la propiedad otp.
+     * 
+     * @return
+     *     possible object is
+     *     {@link JAXBElement }{@code &lt;}{@link String }{@code &gt;}
+     *     
+     */
+    public JAXBElement&lt;String&gt; getOtp() {
+<span class="nc" id="L260">        return otp;</span>
+    }
+
+    /**
+     * Define el valor de la propiedad otp.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link JAXBElement }{@code &lt;}{@link String }{@code &gt;}
+     *     
+     */
+    public void setOtp(JAXBElement&lt;String&gt; value) {
+<span class="nc" id="L272">        this.otp = value;</span>
+<span class="nc" id="L273">    }</span>
+
+    /**
+     * Obtiene el valor de la propiedad password.
+     * 
+     * @return
+     *     possible object is
+     *     {@link JAXBElement }{@code &lt;}{@link String }{@code &gt;}
+     *     
+     */
+    public JAXBElement&lt;String&gt; getPassword() {
+<span class="nc" id="L284">        return password;</span>
+    }
+
+    /**
+     * Define el valor de la propiedad password.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link JAXBElement }{@code &lt;}{@link String }{@code &gt;}
+     *     
+     */
+    public void setPassword(JAXBElement&lt;String&gt; value) {
+<span class="nc" id="L296">        this.password = value;</span>
+<span class="nc" id="L297">    }</span>
+
+    /**
+     * Obtiene el valor de la propiedad pin.
+     * 
+     * @return
+     *     possible object is
+     *     {@link JAXBElement }{@code &lt;}{@link String }{@code &gt;}
+     *     
+     */
+    public JAXBElement&lt;String&gt; getPin() {
+<span class="nc" id="L308">        return pin;</span>
+    }
+
+    /**
+     * Define el valor de la propiedad pin.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link JAXBElement }{@code &lt;}{@link String }{@code &gt;}
+     *     
+     */
+    public void setPin(JAXBElement&lt;String&gt; value) {
+<span class="nc" id="L320">        this.pin = value;</span>
+<span class="nc" id="L321">    }</span>
+
+    /**
+     * Obtiene el valor de la propiedad user.
+     * 
+     * @return
+     *     possible object is
+     *     {@link JAXBElement }{@code &lt;}{@link String }{@code &gt;}
+     *     
+     */
+    public JAXBElement&lt;String&gt; getUser() {
+<span class="nc" id="L332">        return user;</span>
+    }
+
+    /**
+     * Define el valor de la propiedad user.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link JAXBElement }{@code &lt;}{@link String }{@code &gt;}
+     *     
+     */
+    public void setUser(JAXBElement&lt;String&gt; value) {
+<span class="nc" id="L344">        this.user = value;</span>
+<span class="nc" id="L345">    }</span>
+
+    /**
+     * Obtiene el valor de la propiedad utfi.
+     * 
+     * @return
+     *     possible object is
+     *     {@link JAXBElement }{@code &lt;}{@link String }{@code &gt;}
+     *     
+     */
+    public JAXBElement&lt;String&gt; getUtfi() {
+<span class="nc" id="L356">        return utfi;</span>
+    }
+
+    /**
+     * Define el valor de la propiedad utfi.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link JAXBElement }{@code &lt;}{@link String }{@code &gt;}
+     *     
+     */
+    public void setUtfi(JAXBElement&lt;String&gt; value) {
+<span class="nc" id="L368">        this.utfi = value;</span>
+<span class="nc" id="L369">    }</span>
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.5.201505241946</span></div></body></html>

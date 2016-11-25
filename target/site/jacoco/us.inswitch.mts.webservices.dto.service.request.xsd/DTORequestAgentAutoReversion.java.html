@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>DTORequestAgentAutoReversion.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">WU 100BillersPlus :: Connector nacion-servicios-connector</a> &gt; <a href="index.source.html" class="el_package">us.inswitch.mts.webservices.dto.service.request.xsd</a> &gt; <span class="el_source">DTORequestAgentAutoReversion.java</span></div><h1>DTORequestAgentAutoReversion.java</h1><pre class="source lang-java linenums">
+package us.inswitch.mts.webservices.dto.service.request.xsd;
+
+import javax.xml.bind.JAXBElement;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElementRef;
+import javax.xml.bind.annotation.XmlType;
+
+
+/**
+ * &lt;p&gt;Clase Java para DTORequestAgentAutoReversion complex type.
+ * 
+ * &lt;p&gt;El siguiente fragmento de esquema especifica el contenido que se espera que haya en esta clase.
+ * 
+ * &lt;pre&gt;
+ * &amp;lt;complexType name=&quot;DTORequestAgentAutoReversion&quot;&amp;gt;
+ *   &amp;lt;complexContent&amp;gt;
+ *     &amp;lt;restriction base=&quot;{http://www.w3.org/2001/XMLSchema}anyType&quot;&amp;gt;
+ *       &amp;lt;sequence&amp;gt;
+ *         &amp;lt;element name=&quot;idTransaction&quot; type=&quot;{http://www.w3.org/2001/XMLSchema}string&quot; minOccurs=&quot;0&quot;/&amp;gt;
+ *         &amp;lt;element name=&quot;language&quot; type=&quot;{http://www.w3.org/2001/XMLSchema}string&quot; minOccurs=&quot;0&quot;/&amp;gt;
+ *         &amp;lt;element name=&quot;password&quot; type=&quot;{http://www.w3.org/2001/XMLSchema}string&quot; minOccurs=&quot;0&quot;/&amp;gt;
+ *         &amp;lt;element name=&quot;user&quot; type=&quot;{http://www.w3.org/2001/XMLSchema}string&quot; minOccurs=&quot;0&quot;/&amp;gt;
+ *         &amp;lt;element name=&quot;utfi&quot; type=&quot;{http://www.w3.org/2001/XMLSchema}string&quot; minOccurs=&quot;0&quot;/&amp;gt;
+ *       &amp;lt;/sequence&amp;gt;
+ *     &amp;lt;/restriction&amp;gt;
+ *   &amp;lt;/complexContent&amp;gt;
+ * &amp;lt;/complexType&amp;gt;
+ * &lt;/pre&gt;
+ * 
+ * 
+ */
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(name = &quot;DTORequestAgentAutoReversion&quot;, propOrder = {
+    &quot;idTransaction&quot;,
+    &quot;language&quot;,
+    &quot;password&quot;,
+    &quot;user&quot;,
+    &quot;utfi&quot;
+})
+<span class="nc" id="L42">public class DTORequestAgentAutoReversion {</span>
+
+    @XmlElementRef(name = &quot;idTransaction&quot;, namespace = &quot;http://request.service.dto.webservices.mts.inswitch.us/xsd&quot;, type = JAXBElement.class, required = false)
+    protected JAXBElement&lt;String&gt; idTransaction;
+    @XmlElementRef(name = &quot;language&quot;, namespace = &quot;http://request.service.dto.webservices.mts.inswitch.us/xsd&quot;, type = JAXBElement.class, required = false)
+    protected JAXBElement&lt;String&gt; language;
+    @XmlElementRef(name = &quot;password&quot;, namespace = &quot;http://request.service.dto.webservices.mts.inswitch.us/xsd&quot;, type = JAXBElement.class, required = false)
+    protected JAXBElement&lt;String&gt; password;
+    @XmlElementRef(name = &quot;user&quot;, namespace = &quot;http://request.service.dto.webservices.mts.inswitch.us/xsd&quot;, type = JAXBElement.class, required = false)
+    protected JAXBElement&lt;String&gt; user;
+    @XmlElementRef(name = &quot;utfi&quot;, namespace = &quot;http://request.service.dto.webservices.mts.inswitch.us/xsd&quot;, type = JAXBElement.class, required = false)
+    protected JAXBElement&lt;String&gt; utfi;
+
+    /**
+     * Obtiene el valor de la propiedad idTransaction.
+     * 
+     * @return
+     *     possible object is
+     *     {@link JAXBElement }{@code &lt;}{@link String }{@code &gt;}
+     *     
+     */
+    public JAXBElement&lt;String&gt; getIdTransaction() {
+<span class="nc" id="L64">        return idTransaction;</span>
+    }
+
+    /**
+     * Define el valor de la propiedad idTransaction.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link JAXBElement }{@code &lt;}{@link String }{@code &gt;}
+     *     
+     */
+    public void setIdTransaction(JAXBElement&lt;String&gt; value) {
+<span class="nc" id="L76">        this.idTransaction = value;</span>
+<span class="nc" id="L77">    }</span>
+
+    /**
+     * Obtiene el valor de la propiedad language.
+     * 
+     * @return
+     *     possible object is
+     *     {@link JAXBElement }{@code &lt;}{@link String }{@code &gt;}
+     *     
+     */
+    public JAXBElement&lt;String&gt; getLanguage() {
+<span class="nc" id="L88">        return language;</span>
+    }
+
+    /**
+     * Define el valor de la propiedad language.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link JAXBElement }{@code &lt;}{@link String }{@code &gt;}
+     *     
+     */
+    public void setLanguage(JAXBElement&lt;String&gt; value) {
+<span class="nc" id="L100">        this.language = value;</span>
+<span class="nc" id="L101">    }</span>
+
+    /**
+     * Obtiene el valor de la propiedad password.
+     * 
+     * @return
+     *     possible object is
+     *     {@link JAXBElement }{@code &lt;}{@link String }{@code &gt;}
+     *     
+     */
+    public JAXBElement&lt;String&gt; getPassword() {
+<span class="nc" id="L112">        return password;</span>
+    }
+
+    /**
+     * Define el valor de la propiedad password.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link JAXBElement }{@code &lt;}{@link String }{@code &gt;}
+     *     
+     */
+    public void setPassword(JAXBElement&lt;String&gt; value) {
+<span class="nc" id="L124">        this.password = value;</span>
+<span class="nc" id="L125">    }</span>
+
+    /**
+     * Obtiene el valor de la propiedad user.
+     * 
+     * @return
+     *     possible object is
+     *     {@link JAXBElement }{@code &lt;}{@link String }{@code &gt;}
+     *     
+     */
+    public JAXBElement&lt;String&gt; getUser() {
+<span class="nc" id="L136">        return user;</span>
+    }
+
+    /**
+     * Define el valor de la propiedad user.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link JAXBElement }{@code &lt;}{@link String }{@code &gt;}
+     *     
+     */
+    public void setUser(JAXBElement&lt;String&gt; value) {
+<span class="nc" id="L148">        this.user = value;</span>
+<span class="nc" id="L149">    }</span>
+
+    /**
+     * Obtiene el valor de la propiedad utfi.
+     * 
+     * @return
+     *     possible object is
+     *     {@link JAXBElement }{@code &lt;}{@link String }{@code &gt;}
+     *     
+     */
+    public JAXBElement&lt;String&gt; getUtfi() {
+<span class="nc" id="L160">        return utfi;</span>
+    }
+
+    /**
+     * Define el valor de la propiedad utfi.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link JAXBElement }{@code &lt;}{@link String }{@code &gt;}
+     *     
+     */
+    public void setUtfi(JAXBElement&lt;String&gt; value) {
+<span class="nc" id="L172">        this.utfi = value;</span>
+<span class="nc" id="L173">    }</span>
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.5.201505241946</span></div></body></html>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>ObjectFactory.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">WU 100BillersPlus :: Connector nacion-servicios-connector</a> &gt; <a href="index.source.html" class="el_package">us.inswitch.mts.model.xsd</a> &gt; <span class="el_source">ObjectFactory.java</span></div><h1>ObjectFactory.java</h1><pre class="source lang-java linenums">
+package us.inswitch.mts.model.xsd;
+
+import javax.xml.bind.JAXBElement;
+import javax.xml.bind.annotation.XmlElementDecl;
+import javax.xml.bind.annotation.XmlRegistry;
+import javax.xml.namespace.QName;
+
+
+/**
+ * This object contains factory methods for each 
+ * Java content interface and Java element interface 
+ * generated in the us.inswitch.mts.model.xsd package. 
+ * &lt;p&gt;An ObjectFactory allows you to programatically 
+ * construct new instances of the Java representation 
+ * for XML content. The Java representation of XML 
+ * content can consist of schema derived interfaces 
+ * and classes representing the binding of schema 
+ * type definitions, element declarations and model 
+ * groups.  Factory methods for each of these are 
+ * provided in this class.
+ * 
+ */
+@XmlRegistry
+public class ObjectFactory {
+
+<span class="nc" id="L27">    private final static QName _TransactionValuesKey_QNAME = new QName(&quot;http://model.mts.inswitch.us/xsd&quot;, &quot;key&quot;);</span>
+<span class="nc" id="L28">    private final static QName _TransactionValuesValue_QNAME = new QName(&quot;http://model.mts.inswitch.us/xsd&quot;, &quot;value&quot;);</span>
+
+    /**
+     * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: us.inswitch.mts.model.xsd
+     * 
+     */
+<span class="nc" id="L34">    public ObjectFactory() {</span>
+<span class="nc" id="L35">    }</span>
+
+    /**
+     * Create an instance of {@link TransactionValues }
+     * 
+     */
+    public TransactionValues createTransactionValues() {
+<span class="nc" id="L42">        return new TransactionValues();</span>
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code &lt;}{@link String }{@code &gt;}}
+     * 
+     */
+    @XmlElementDecl(namespace = &quot;http://model.mts.inswitch.us/xsd&quot;, name = &quot;key&quot;, scope = TransactionValues.class)
+    public JAXBElement&lt;String&gt; createTransactionValuesKey(String value) {
+<span class="nc" id="L51">        return new JAXBElement&lt;String&gt;(_TransactionValuesKey_QNAME, String.class, TransactionValues.class, value);</span>
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code &lt;}{@link String }{@code &gt;}}
+     * 
+     */
+    @XmlElementDecl(namespace = &quot;http://model.mts.inswitch.us/xsd&quot;, name = &quot;value&quot;, scope = TransactionValues.class)
+    public JAXBElement&lt;String&gt; createTransactionValuesValue(String value) {
+<span class="nc" id="L60">        return new JAXBElement&lt;String&gt;(_TransactionValuesValue_QNAME, String.class, TransactionValues.class, value);</span>
+    }
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.5.201505241946</span></div></body></html>

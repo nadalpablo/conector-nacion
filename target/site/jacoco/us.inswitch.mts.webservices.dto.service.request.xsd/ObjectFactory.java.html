@@ -1,0 +1,592 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>ObjectFactory.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">WU 100BillersPlus :: Connector nacion-servicios-connector</a> &gt; <a href="index.source.html" class="el_package">us.inswitch.mts.webservices.dto.service.request.xsd</a> &gt; <span class="el_source">ObjectFactory.java</span></div><h1>ObjectFactory.java</h1><pre class="source lang-java linenums">
+package us.inswitch.mts.webservices.dto.service.request.xsd;
+
+import javax.xml.bind.JAXBElement;
+import javax.xml.bind.annotation.XmlElementDecl;
+import javax.xml.bind.annotation.XmlRegistry;
+import javax.xml.namespace.QName;
+
+
+/**
+ * This object contains factory methods for each 
+ * Java content interface and Java element interface 
+ * generated in the us.inswitch.mts.webservices.dto.service.request.xsd package. 
+ * &lt;p&gt;An ObjectFactory allows you to programatically 
+ * construct new instances of the Java representation 
+ * for XML content. The Java representation of XML 
+ * content can consist of schema derived interfaces 
+ * and classes representing the binding of schema 
+ * type definitions, element declarations and model 
+ * groups.  Factory methods for each of these are 
+ * provided in this class.
+ * 
+ */
+@XmlRegistry
+public class ObjectFactory {
+
+<span class="nc" id="L27">    private final static QName _DTORequestUtfiAutoReversionLanguage_QNAME = new QName(&quot;http://request.service.dto.webservices.mts.inswitch.us/xsd&quot;, &quot;language&quot;);</span>
+<span class="nc" id="L28">    private final static QName _DTORequestUtfiAutoReversionPassword_QNAME = new QName(&quot;http://request.service.dto.webservices.mts.inswitch.us/xsd&quot;, &quot;password&quot;);</span>
+<span class="nc" id="L29">    private final static QName _DTORequestUtfiAutoReversionUser_QNAME = new QName(&quot;http://request.service.dto.webservices.mts.inswitch.us/xsd&quot;, &quot;user&quot;);</span>
+<span class="nc" id="L30">    private final static QName _DTORequestUtfiAutoReversionUtfi_QNAME = new QName(&quot;http://request.service.dto.webservices.mts.inswitch.us/xsd&quot;, &quot;utfi&quot;);</span>
+<span class="nc" id="L31">    private final static QName _DTORequestAgentAutoReversionIdTransaction_QNAME = new QName(&quot;http://request.service.dto.webservices.mts.inswitch.us/xsd&quot;, &quot;idTransaction&quot;);</span>
+<span class="nc" id="L32">    private final static QName _DTORequestCashOutConfirmAmount_QNAME = new QName(&quot;http://request.service.dto.webservices.mts.inswitch.us/xsd&quot;, &quot;amount&quot;);</span>
+<span class="nc" id="L33">    private final static QName _DTORequestCashOutConfirmBrandId_QNAME = new QName(&quot;http://request.service.dto.webservices.mts.inswitch.us/xsd&quot;, &quot;brandId&quot;);</span>
+<span class="nc" id="L34">    private final static QName _DTORequestCashOutConfirmCurrency_QNAME = new QName(&quot;http://request.service.dto.webservices.mts.inswitch.us/xsd&quot;, &quot;currency&quot;);</span>
+<span class="nc" id="L35">    private final static QName _DTORequestCashOutConfirmDocument_QNAME = new QName(&quot;http://request.service.dto.webservices.mts.inswitch.us/xsd&quot;, &quot;document&quot;);</span>
+<span class="nc" id="L36">    private final static QName _DTORequestCashOutConfirmMsisdnSource_QNAME = new QName(&quot;http://request.service.dto.webservices.mts.inswitch.us/xsd&quot;, &quot;msisdnSource&quot;);</span>
+<span class="nc" id="L37">    private final static QName _DTORequestCashOutConfirmMsisdnTarget_QNAME = new QName(&quot;http://request.service.dto.webservices.mts.inswitch.us/xsd&quot;, &quot;msisdnTarget&quot;);</span>
+<span class="nc" id="L38">    private final static QName _DTORequestCashOutConfirmOtp_QNAME = new QName(&quot;http://request.service.dto.webservices.mts.inswitch.us/xsd&quot;, &quot;otp&quot;);</span>
+<span class="nc" id="L39">    private final static QName _DTORequestCashOutConfirmPin_QNAME = new QName(&quot;http://request.service.dto.webservices.mts.inswitch.us/xsd&quot;, &quot;pin&quot;);</span>
+
+    /**
+     * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: us.inswitch.mts.webservices.dto.service.request.xsd
+     * 
+     */
+<span class="nc" id="L45">    public ObjectFactory() {</span>
+<span class="nc" id="L46">    }</span>
+
+    /**
+     * Create an instance of {@link DTORequestCashInPre }
+     * 
+     */
+    public DTORequestCashInPre createDTORequestCashInPre() {
+<span class="nc" id="L53">        return new DTORequestCashInPre();</span>
+    }
+
+    /**
+     * Create an instance of {@link DTORequestCashOutPre }
+     * 
+     */
+    public DTORequestCashOutPre createDTORequestCashOutPre() {
+<span class="nc" id="L61">        return new DTORequestCashOutPre();</span>
+    }
+
+    /**
+     * Create an instance of {@link DTORequestCashInConfirm }
+     * 
+     */
+    public DTORequestCashInConfirm createDTORequestCashInConfirm() {
+<span class="nc" id="L69">        return new DTORequestCashInConfirm();</span>
+    }
+
+    /**
+     * Create an instance of {@link DTORequestCashOutConfirm }
+     * 
+     */
+    public DTORequestCashOutConfirm createDTORequestCashOutConfirm() {
+<span class="nc" id="L77">        return new DTORequestCashOutConfirm();</span>
+    }
+
+    /**
+     * Create an instance of {@link DTORequestAgentAutoReversion }
+     * 
+     */
+    public DTORequestAgentAutoReversion createDTORequestAgentAutoReversion() {
+<span class="nc" id="L85">        return new DTORequestAgentAutoReversion();</span>
+    }
+
+    /**
+     * Create an instance of {@link DTORequestUtfiAutoReversion }
+     * 
+     */
+    public DTORequestUtfiAutoReversion createDTORequestUtfiAutoReversion() {
+<span class="nc" id="L93">        return new DTORequestUtfiAutoReversion();</span>
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code &lt;}{@link String }{@code &gt;}}
+     * 
+     */
+    @XmlElementDecl(namespace = &quot;http://request.service.dto.webservices.mts.inswitch.us/xsd&quot;, name = &quot;language&quot;, scope = DTORequestUtfiAutoReversion.class)
+    public JAXBElement&lt;String&gt; createDTORequestUtfiAutoReversionLanguage(String value) {
+<span class="nc" id="L102">        return new JAXBElement&lt;String&gt;(_DTORequestUtfiAutoReversionLanguage_QNAME, String.class, DTORequestUtfiAutoReversion.class, value);</span>
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code &lt;}{@link String }{@code &gt;}}
+     * 
+     */
+    @XmlElementDecl(namespace = &quot;http://request.service.dto.webservices.mts.inswitch.us/xsd&quot;, name = &quot;password&quot;, scope = DTORequestUtfiAutoReversion.class)
+    public JAXBElement&lt;String&gt; createDTORequestUtfiAutoReversionPassword(String value) {
+<span class="nc" id="L111">        return new JAXBElement&lt;String&gt;(_DTORequestUtfiAutoReversionPassword_QNAME, String.class, DTORequestUtfiAutoReversion.class, value);</span>
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code &lt;}{@link String }{@code &gt;}}
+     * 
+     */
+    @XmlElementDecl(namespace = &quot;http://request.service.dto.webservices.mts.inswitch.us/xsd&quot;, name = &quot;user&quot;, scope = DTORequestUtfiAutoReversion.class)
+    public JAXBElement&lt;String&gt; createDTORequestUtfiAutoReversionUser(String value) {
+<span class="nc" id="L120">        return new JAXBElement&lt;String&gt;(_DTORequestUtfiAutoReversionUser_QNAME, String.class, DTORequestUtfiAutoReversion.class, value);</span>
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code &lt;}{@link String }{@code &gt;}}
+     * 
+     */
+    @XmlElementDecl(namespace = &quot;http://request.service.dto.webservices.mts.inswitch.us/xsd&quot;, name = &quot;utfi&quot;, scope = DTORequestUtfiAutoReversion.class)
+    public JAXBElement&lt;String&gt; createDTORequestUtfiAutoReversionUtfi(String value) {
+<span class="nc" id="L129">        return new JAXBElement&lt;String&gt;(_DTORequestUtfiAutoReversionUtfi_QNAME, String.class, DTORequestUtfiAutoReversion.class, value);</span>
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code &lt;}{@link String }{@code &gt;}}
+     * 
+     */
+    @XmlElementDecl(namespace = &quot;http://request.service.dto.webservices.mts.inswitch.us/xsd&quot;, name = &quot;idTransaction&quot;, scope = DTORequestAgentAutoReversion.class)
+    public JAXBElement&lt;String&gt; createDTORequestAgentAutoReversionIdTransaction(String value) {
+<span class="nc" id="L138">        return new JAXBElement&lt;String&gt;(_DTORequestAgentAutoReversionIdTransaction_QNAME, String.class, DTORequestAgentAutoReversion.class, value);</span>
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code &lt;}{@link String }{@code &gt;}}
+     * 
+     */
+    @XmlElementDecl(namespace = &quot;http://request.service.dto.webservices.mts.inswitch.us/xsd&quot;, name = &quot;language&quot;, scope = DTORequestAgentAutoReversion.class)
+    public JAXBElement&lt;String&gt; createDTORequestAgentAutoReversionLanguage(String value) {
+<span class="nc" id="L147">        return new JAXBElement&lt;String&gt;(_DTORequestUtfiAutoReversionLanguage_QNAME, String.class, DTORequestAgentAutoReversion.class, value);</span>
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code &lt;}{@link String }{@code &gt;}}
+     * 
+     */
+    @XmlElementDecl(namespace = &quot;http://request.service.dto.webservices.mts.inswitch.us/xsd&quot;, name = &quot;password&quot;, scope = DTORequestAgentAutoReversion.class)
+    public JAXBElement&lt;String&gt; createDTORequestAgentAutoReversionPassword(String value) {
+<span class="nc" id="L156">        return new JAXBElement&lt;String&gt;(_DTORequestUtfiAutoReversionPassword_QNAME, String.class, DTORequestAgentAutoReversion.class, value);</span>
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code &lt;}{@link String }{@code &gt;}}
+     * 
+     */
+    @XmlElementDecl(namespace = &quot;http://request.service.dto.webservices.mts.inswitch.us/xsd&quot;, name = &quot;user&quot;, scope = DTORequestAgentAutoReversion.class)
+    public JAXBElement&lt;String&gt; createDTORequestAgentAutoReversionUser(String value) {
+<span class="nc" id="L165">        return new JAXBElement&lt;String&gt;(_DTORequestUtfiAutoReversionUser_QNAME, String.class, DTORequestAgentAutoReversion.class, value);</span>
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code &lt;}{@link String }{@code &gt;}}
+     * 
+     */
+    @XmlElementDecl(namespace = &quot;http://request.service.dto.webservices.mts.inswitch.us/xsd&quot;, name = &quot;utfi&quot;, scope = DTORequestAgentAutoReversion.class)
+    public JAXBElement&lt;String&gt; createDTORequestAgentAutoReversionUtfi(String value) {
+<span class="nc" id="L174">        return new JAXBElement&lt;String&gt;(_DTORequestUtfiAutoReversionUtfi_QNAME, String.class, DTORequestAgentAutoReversion.class, value);</span>
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code &lt;}{@link Double }{@code &gt;}}
+     * 
+     */
+    @XmlElementDecl(namespace = &quot;http://request.service.dto.webservices.mts.inswitch.us/xsd&quot;, name = &quot;amount&quot;, scope = DTORequestCashOutConfirm.class)
+    public JAXBElement&lt;Double&gt; createDTORequestCashOutConfirmAmount(Double value) {
+<span class="nc" id="L183">        return new JAXBElement&lt;Double&gt;(_DTORequestCashOutConfirmAmount_QNAME, Double.class, DTORequestCashOutConfirm.class, value);</span>
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code &lt;}{@link Integer }{@code &gt;}}
+     * 
+     */
+    @XmlElementDecl(namespace = &quot;http://request.service.dto.webservices.mts.inswitch.us/xsd&quot;, name = &quot;brandId&quot;, scope = DTORequestCashOutConfirm.class)
+    public JAXBElement&lt;Integer&gt; createDTORequestCashOutConfirmBrandId(Integer value) {
+<span class="nc" id="L192">        return new JAXBElement&lt;Integer&gt;(_DTORequestCashOutConfirmBrandId_QNAME, Integer.class, DTORequestCashOutConfirm.class, value);</span>
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code &lt;}{@link Integer }{@code &gt;}}
+     * 
+     */
+    @XmlElementDecl(namespace = &quot;http://request.service.dto.webservices.mts.inswitch.us/xsd&quot;, name = &quot;currency&quot;, scope = DTORequestCashOutConfirm.class)
+    public JAXBElement&lt;Integer&gt; createDTORequestCashOutConfirmCurrency(Integer value) {
+<span class="nc" id="L201">        return new JAXBElement&lt;Integer&gt;(_DTORequestCashOutConfirmCurrency_QNAME, Integer.class, DTORequestCashOutConfirm.class, value);</span>
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code &lt;}{@link String }{@code &gt;}}
+     * 
+     */
+    @XmlElementDecl(namespace = &quot;http://request.service.dto.webservices.mts.inswitch.us/xsd&quot;, name = &quot;document&quot;, scope = DTORequestCashOutConfirm.class)
+    public JAXBElement&lt;String&gt; createDTORequestCashOutConfirmDocument(String value) {
+<span class="nc" id="L210">        return new JAXBElement&lt;String&gt;(_DTORequestCashOutConfirmDocument_QNAME, String.class, DTORequestCashOutConfirm.class, value);</span>
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code &lt;}{@link String }{@code &gt;}}
+     * 
+     */
+    @XmlElementDecl(namespace = &quot;http://request.service.dto.webservices.mts.inswitch.us/xsd&quot;, name = &quot;language&quot;, scope = DTORequestCashOutConfirm.class)
+    public JAXBElement&lt;String&gt; createDTORequestCashOutConfirmLanguage(String value) {
+<span class="nc" id="L219">        return new JAXBElement&lt;String&gt;(_DTORequestUtfiAutoReversionLanguage_QNAME, String.class, DTORequestCashOutConfirm.class, value);</span>
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code &lt;}{@link String }{@code &gt;}}
+     * 
+     */
+    @XmlElementDecl(namespace = &quot;http://request.service.dto.webservices.mts.inswitch.us/xsd&quot;, name = &quot;msisdnSource&quot;, scope = DTORequestCashOutConfirm.class)
+    public JAXBElement&lt;String&gt; createDTORequestCashOutConfirmMsisdnSource(String value) {
+<span class="nc" id="L228">        return new JAXBElement&lt;String&gt;(_DTORequestCashOutConfirmMsisdnSource_QNAME, String.class, DTORequestCashOutConfirm.class, value);</span>
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code &lt;}{@link String }{@code &gt;}}
+     * 
+     */
+    @XmlElementDecl(namespace = &quot;http://request.service.dto.webservices.mts.inswitch.us/xsd&quot;, name = &quot;msisdnTarget&quot;, scope = DTORequestCashOutConfirm.class)
+    public JAXBElement&lt;String&gt; createDTORequestCashOutConfirmMsisdnTarget(String value) {
+<span class="nc" id="L237">        return new JAXBElement&lt;String&gt;(_DTORequestCashOutConfirmMsisdnTarget_QNAME, String.class, DTORequestCashOutConfirm.class, value);</span>
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code &lt;}{@link String }{@code &gt;}}
+     * 
+     */
+    @XmlElementDecl(namespace = &quot;http://request.service.dto.webservices.mts.inswitch.us/xsd&quot;, name = &quot;otp&quot;, scope = DTORequestCashOutConfirm.class)
+    public JAXBElement&lt;String&gt; createDTORequestCashOutConfirmOtp(String value) {
+<span class="nc" id="L246">        return new JAXBElement&lt;String&gt;(_DTORequestCashOutConfirmOtp_QNAME, String.class, DTORequestCashOutConfirm.class, value);</span>
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code &lt;}{@link String }{@code &gt;}}
+     * 
+     */
+    @XmlElementDecl(namespace = &quot;http://request.service.dto.webservices.mts.inswitch.us/xsd&quot;, name = &quot;password&quot;, scope = DTORequestCashOutConfirm.class)
+    public JAXBElement&lt;String&gt; createDTORequestCashOutConfirmPassword(String value) {
+<span class="nc" id="L255">        return new JAXBElement&lt;String&gt;(_DTORequestUtfiAutoReversionPassword_QNAME, String.class, DTORequestCashOutConfirm.class, value);</span>
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code &lt;}{@link String }{@code &gt;}}
+     * 
+     */
+    @XmlElementDecl(namespace = &quot;http://request.service.dto.webservices.mts.inswitch.us/xsd&quot;, name = &quot;pin&quot;, scope = DTORequestCashOutConfirm.class)
+    public JAXBElement&lt;String&gt; createDTORequestCashOutConfirmPin(String value) {
+<span class="nc" id="L264">        return new JAXBElement&lt;String&gt;(_DTORequestCashOutConfirmPin_QNAME, String.class, DTORequestCashOutConfirm.class, value);</span>
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code &lt;}{@link String }{@code &gt;}}
+     * 
+     */
+    @XmlElementDecl(namespace = &quot;http://request.service.dto.webservices.mts.inswitch.us/xsd&quot;, name = &quot;user&quot;, scope = DTORequestCashOutConfirm.class)
+    public JAXBElement&lt;String&gt; createDTORequestCashOutConfirmUser(String value) {
+<span class="nc" id="L273">        return new JAXBElement&lt;String&gt;(_DTORequestUtfiAutoReversionUser_QNAME, String.class, DTORequestCashOutConfirm.class, value);</span>
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code &lt;}{@link String }{@code &gt;}}
+     * 
+     */
+    @XmlElementDecl(namespace = &quot;http://request.service.dto.webservices.mts.inswitch.us/xsd&quot;, name = &quot;utfi&quot;, scope = DTORequestCashOutConfirm.class)
+    public JAXBElement&lt;String&gt; createDTORequestCashOutConfirmUtfi(String value) {
+<span class="nc" id="L282">        return new JAXBElement&lt;String&gt;(_DTORequestUtfiAutoReversionUtfi_QNAME, String.class, DTORequestCashOutConfirm.class, value);</span>
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code &lt;}{@link Double }{@code &gt;}}
+     * 
+     */
+    @XmlElementDecl(namespace = &quot;http://request.service.dto.webservices.mts.inswitch.us/xsd&quot;, name = &quot;amount&quot;, scope = DTORequestCashInConfirm.class)
+    public JAXBElement&lt;Double&gt; createDTORequestCashInConfirmAmount(Double value) {
+<span class="nc" id="L291">        return new JAXBElement&lt;Double&gt;(_DTORequestCashOutConfirmAmount_QNAME, Double.class, DTORequestCashInConfirm.class, value);</span>
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code &lt;}{@link Integer }{@code &gt;}}
+     * 
+     */
+    @XmlElementDecl(namespace = &quot;http://request.service.dto.webservices.mts.inswitch.us/xsd&quot;, name = &quot;brandId&quot;, scope = DTORequestCashInConfirm.class)
+    public JAXBElement&lt;Integer&gt; createDTORequestCashInConfirmBrandId(Integer value) {
+<span class="nc" id="L300">        return new JAXBElement&lt;Integer&gt;(_DTORequestCashOutConfirmBrandId_QNAME, Integer.class, DTORequestCashInConfirm.class, value);</span>
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code &lt;}{@link Integer }{@code &gt;}}
+     * 
+     */
+    @XmlElementDecl(namespace = &quot;http://request.service.dto.webservices.mts.inswitch.us/xsd&quot;, name = &quot;currency&quot;, scope = DTORequestCashInConfirm.class)
+    public JAXBElement&lt;Integer&gt; createDTORequestCashInConfirmCurrency(Integer value) {
+<span class="nc" id="L309">        return new JAXBElement&lt;Integer&gt;(_DTORequestCashOutConfirmCurrency_QNAME, Integer.class, DTORequestCashInConfirm.class, value);</span>
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code &lt;}{@link String }{@code &gt;}}
+     * 
+     */
+    @XmlElementDecl(namespace = &quot;http://request.service.dto.webservices.mts.inswitch.us/xsd&quot;, name = &quot;document&quot;, scope = DTORequestCashInConfirm.class)
+    public JAXBElement&lt;String&gt; createDTORequestCashInConfirmDocument(String value) {
+<span class="nc" id="L318">        return new JAXBElement&lt;String&gt;(_DTORequestCashOutConfirmDocument_QNAME, String.class, DTORequestCashInConfirm.class, value);</span>
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code &lt;}{@link String }{@code &gt;}}
+     * 
+     */
+    @XmlElementDecl(namespace = &quot;http://request.service.dto.webservices.mts.inswitch.us/xsd&quot;, name = &quot;language&quot;, scope = DTORequestCashInConfirm.class)
+    public JAXBElement&lt;String&gt; createDTORequestCashInConfirmLanguage(String value) {
+<span class="nc" id="L327">        return new JAXBElement&lt;String&gt;(_DTORequestUtfiAutoReversionLanguage_QNAME, String.class, DTORequestCashInConfirm.class, value);</span>
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code &lt;}{@link String }{@code &gt;}}
+     * 
+     */
+    @XmlElementDecl(namespace = &quot;http://request.service.dto.webservices.mts.inswitch.us/xsd&quot;, name = &quot;msisdnSource&quot;, scope = DTORequestCashInConfirm.class)
+    public JAXBElement&lt;String&gt; createDTORequestCashInConfirmMsisdnSource(String value) {
+<span class="nc" id="L336">        return new JAXBElement&lt;String&gt;(_DTORequestCashOutConfirmMsisdnSource_QNAME, String.class, DTORequestCashInConfirm.class, value);</span>
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code &lt;}{@link String }{@code &gt;}}
+     * 
+     */
+    @XmlElementDecl(namespace = &quot;http://request.service.dto.webservices.mts.inswitch.us/xsd&quot;, name = &quot;msisdnTarget&quot;, scope = DTORequestCashInConfirm.class)
+    public JAXBElement&lt;String&gt; createDTORequestCashInConfirmMsisdnTarget(String value) {
+<span class="nc" id="L345">        return new JAXBElement&lt;String&gt;(_DTORequestCashOutConfirmMsisdnTarget_QNAME, String.class, DTORequestCashInConfirm.class, value);</span>
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code &lt;}{@link String }{@code &gt;}}
+     * 
+     */
+    @XmlElementDecl(namespace = &quot;http://request.service.dto.webservices.mts.inswitch.us/xsd&quot;, name = &quot;password&quot;, scope = DTORequestCashInConfirm.class)
+    public JAXBElement&lt;String&gt; createDTORequestCashInConfirmPassword(String value) {
+<span class="nc" id="L354">        return new JAXBElement&lt;String&gt;(_DTORequestUtfiAutoReversionPassword_QNAME, String.class, DTORequestCashInConfirm.class, value);</span>
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code &lt;}{@link String }{@code &gt;}}
+     * 
+     */
+    @XmlElementDecl(namespace = &quot;http://request.service.dto.webservices.mts.inswitch.us/xsd&quot;, name = &quot;pin&quot;, scope = DTORequestCashInConfirm.class)
+    public JAXBElement&lt;String&gt; createDTORequestCashInConfirmPin(String value) {
+<span class="nc" id="L363">        return new JAXBElement&lt;String&gt;(_DTORequestCashOutConfirmPin_QNAME, String.class, DTORequestCashInConfirm.class, value);</span>
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code &lt;}{@link String }{@code &gt;}}
+     * 
+     */
+    @XmlElementDecl(namespace = &quot;http://request.service.dto.webservices.mts.inswitch.us/xsd&quot;, name = &quot;user&quot;, scope = DTORequestCashInConfirm.class)
+    public JAXBElement&lt;String&gt; createDTORequestCashInConfirmUser(String value) {
+<span class="nc" id="L372">        return new JAXBElement&lt;String&gt;(_DTORequestUtfiAutoReversionUser_QNAME, String.class, DTORequestCashInConfirm.class, value);</span>
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code &lt;}{@link String }{@code &gt;}}
+     * 
+     */
+    @XmlElementDecl(namespace = &quot;http://request.service.dto.webservices.mts.inswitch.us/xsd&quot;, name = &quot;utfi&quot;, scope = DTORequestCashInConfirm.class)
+    public JAXBElement&lt;String&gt; createDTORequestCashInConfirmUtfi(String value) {
+<span class="nc" id="L381">        return new JAXBElement&lt;String&gt;(_DTORequestUtfiAutoReversionUtfi_QNAME, String.class, DTORequestCashInConfirm.class, value);</span>
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code &lt;}{@link Double }{@code &gt;}}
+     * 
+     */
+    @XmlElementDecl(namespace = &quot;http://request.service.dto.webservices.mts.inswitch.us/xsd&quot;, name = &quot;amount&quot;, scope = DTORequestCashOutPre.class)
+    public JAXBElement&lt;Double&gt; createDTORequestCashOutPreAmount(Double value) {
+<span class="nc" id="L390">        return new JAXBElement&lt;Double&gt;(_DTORequestCashOutConfirmAmount_QNAME, Double.class, DTORequestCashOutPre.class, value);</span>
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code &lt;}{@link Integer }{@code &gt;}}
+     * 
+     */
+    @XmlElementDecl(namespace = &quot;http://request.service.dto.webservices.mts.inswitch.us/xsd&quot;, name = &quot;brandId&quot;, scope = DTORequestCashOutPre.class)
+    public JAXBElement&lt;Integer&gt; createDTORequestCashOutPreBrandId(Integer value) {
+<span class="nc" id="L399">        return new JAXBElement&lt;Integer&gt;(_DTORequestCashOutConfirmBrandId_QNAME, Integer.class, DTORequestCashOutPre.class, value);</span>
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code &lt;}{@link Integer }{@code &gt;}}
+     * 
+     */
+    @XmlElementDecl(namespace = &quot;http://request.service.dto.webservices.mts.inswitch.us/xsd&quot;, name = &quot;currency&quot;, scope = DTORequestCashOutPre.class)
+    public JAXBElement&lt;Integer&gt; createDTORequestCashOutPreCurrency(Integer value) {
+<span class="nc" id="L408">        return new JAXBElement&lt;Integer&gt;(_DTORequestCashOutConfirmCurrency_QNAME, Integer.class, DTORequestCashOutPre.class, value);</span>
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code &lt;}{@link String }{@code &gt;}}
+     * 
+     */
+    @XmlElementDecl(namespace = &quot;http://request.service.dto.webservices.mts.inswitch.us/xsd&quot;, name = &quot;document&quot;, scope = DTORequestCashOutPre.class)
+    public JAXBElement&lt;String&gt; createDTORequestCashOutPreDocument(String value) {
+<span class="nc" id="L417">        return new JAXBElement&lt;String&gt;(_DTORequestCashOutConfirmDocument_QNAME, String.class, DTORequestCashOutPre.class, value);</span>
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code &lt;}{@link String }{@code &gt;}}
+     * 
+     */
+    @XmlElementDecl(namespace = &quot;http://request.service.dto.webservices.mts.inswitch.us/xsd&quot;, name = &quot;language&quot;, scope = DTORequestCashOutPre.class)
+    public JAXBElement&lt;String&gt; createDTORequestCashOutPreLanguage(String value) {
+<span class="nc" id="L426">        return new JAXBElement&lt;String&gt;(_DTORequestUtfiAutoReversionLanguage_QNAME, String.class, DTORequestCashOutPre.class, value);</span>
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code &lt;}{@link String }{@code &gt;}}
+     * 
+     */
+    @XmlElementDecl(namespace = &quot;http://request.service.dto.webservices.mts.inswitch.us/xsd&quot;, name = &quot;msisdnSource&quot;, scope = DTORequestCashOutPre.class)
+    public JAXBElement&lt;String&gt; createDTORequestCashOutPreMsisdnSource(String value) {
+<span class="nc" id="L435">        return new JAXBElement&lt;String&gt;(_DTORequestCashOutConfirmMsisdnSource_QNAME, String.class, DTORequestCashOutPre.class, value);</span>
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code &lt;}{@link String }{@code &gt;}}
+     * 
+     */
+    @XmlElementDecl(namespace = &quot;http://request.service.dto.webservices.mts.inswitch.us/xsd&quot;, name = &quot;msisdnTarget&quot;, scope = DTORequestCashOutPre.class)
+    public JAXBElement&lt;String&gt; createDTORequestCashOutPreMsisdnTarget(String value) {
+<span class="nc" id="L444">        return new JAXBElement&lt;String&gt;(_DTORequestCashOutConfirmMsisdnTarget_QNAME, String.class, DTORequestCashOutPre.class, value);</span>
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code &lt;}{@link String }{@code &gt;}}
+     * 
+     */
+    @XmlElementDecl(namespace = &quot;http://request.service.dto.webservices.mts.inswitch.us/xsd&quot;, name = &quot;otp&quot;, scope = DTORequestCashOutPre.class)
+    public JAXBElement&lt;String&gt; createDTORequestCashOutPreOtp(String value) {
+<span class="nc" id="L453">        return new JAXBElement&lt;String&gt;(_DTORequestCashOutConfirmOtp_QNAME, String.class, DTORequestCashOutPre.class, value);</span>
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code &lt;}{@link String }{@code &gt;}}
+     * 
+     */
+    @XmlElementDecl(namespace = &quot;http://request.service.dto.webservices.mts.inswitch.us/xsd&quot;, name = &quot;password&quot;, scope = DTORequestCashOutPre.class)
+    public JAXBElement&lt;String&gt; createDTORequestCashOutPrePassword(String value) {
+<span class="nc" id="L462">        return new JAXBElement&lt;String&gt;(_DTORequestUtfiAutoReversionPassword_QNAME, String.class, DTORequestCashOutPre.class, value);</span>
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code &lt;}{@link String }{@code &gt;}}
+     * 
+     */
+    @XmlElementDecl(namespace = &quot;http://request.service.dto.webservices.mts.inswitch.us/xsd&quot;, name = &quot;pin&quot;, scope = DTORequestCashOutPre.class)
+    public JAXBElement&lt;String&gt; createDTORequestCashOutPrePin(String value) {
+<span class="nc" id="L471">        return new JAXBElement&lt;String&gt;(_DTORequestCashOutConfirmPin_QNAME, String.class, DTORequestCashOutPre.class, value);</span>
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code &lt;}{@link String }{@code &gt;}}
+     * 
+     */
+    @XmlElementDecl(namespace = &quot;http://request.service.dto.webservices.mts.inswitch.us/xsd&quot;, name = &quot;user&quot;, scope = DTORequestCashOutPre.class)
+    public JAXBElement&lt;String&gt; createDTORequestCashOutPreUser(String value) {
+<span class="nc" id="L480">        return new JAXBElement&lt;String&gt;(_DTORequestUtfiAutoReversionUser_QNAME, String.class, DTORequestCashOutPre.class, value);</span>
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code &lt;}{@link String }{@code &gt;}}
+     * 
+     */
+    @XmlElementDecl(namespace = &quot;http://request.service.dto.webservices.mts.inswitch.us/xsd&quot;, name = &quot;utfi&quot;, scope = DTORequestCashOutPre.class)
+    public JAXBElement&lt;String&gt; createDTORequestCashOutPreUtfi(String value) {
+<span class="nc" id="L489">        return new JAXBElement&lt;String&gt;(_DTORequestUtfiAutoReversionUtfi_QNAME, String.class, DTORequestCashOutPre.class, value);</span>
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code &lt;}{@link Double }{@code &gt;}}
+     * 
+     */
+    @XmlElementDecl(namespace = &quot;http://request.service.dto.webservices.mts.inswitch.us/xsd&quot;, name = &quot;amount&quot;, scope = DTORequestCashInPre.class)
+    public JAXBElement&lt;Double&gt; createDTORequestCashInPreAmount(Double value) {
+<span class="nc" id="L498">        return new JAXBElement&lt;Double&gt;(_DTORequestCashOutConfirmAmount_QNAME, Double.class, DTORequestCashInPre.class, value);</span>
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code &lt;}{@link Integer }{@code &gt;}}
+     * 
+     */
+    @XmlElementDecl(namespace = &quot;http://request.service.dto.webservices.mts.inswitch.us/xsd&quot;, name = &quot;brandId&quot;, scope = DTORequestCashInPre.class)
+    public JAXBElement&lt;Integer&gt; createDTORequestCashInPreBrandId(Integer value) {
+<span class="nc" id="L507">        return new JAXBElement&lt;Integer&gt;(_DTORequestCashOutConfirmBrandId_QNAME, Integer.class, DTORequestCashInPre.class, value);</span>
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code &lt;}{@link Integer }{@code &gt;}}
+     * 
+     */
+    @XmlElementDecl(namespace = &quot;http://request.service.dto.webservices.mts.inswitch.us/xsd&quot;, name = &quot;currency&quot;, scope = DTORequestCashInPre.class)
+    public JAXBElement&lt;Integer&gt; createDTORequestCashInPreCurrency(Integer value) {
+<span class="nc" id="L516">        return new JAXBElement&lt;Integer&gt;(_DTORequestCashOutConfirmCurrency_QNAME, Integer.class, DTORequestCashInPre.class, value);</span>
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code &lt;}{@link String }{@code &gt;}}
+     * 
+     */
+    @XmlElementDecl(namespace = &quot;http://request.service.dto.webservices.mts.inswitch.us/xsd&quot;, name = &quot;document&quot;, scope = DTORequestCashInPre.class)
+    public JAXBElement&lt;String&gt; createDTORequestCashInPreDocument(String value) {
+<span class="nc" id="L525">        return new JAXBElement&lt;String&gt;(_DTORequestCashOutConfirmDocument_QNAME, String.class, DTORequestCashInPre.class, value);</span>
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code &lt;}{@link String }{@code &gt;}}
+     * 
+     */
+    @XmlElementDecl(namespace = &quot;http://request.service.dto.webservices.mts.inswitch.us/xsd&quot;, name = &quot;language&quot;, scope = DTORequestCashInPre.class)
+    public JAXBElement&lt;String&gt; createDTORequestCashInPreLanguage(String value) {
+<span class="nc" id="L534">        return new JAXBElement&lt;String&gt;(_DTORequestUtfiAutoReversionLanguage_QNAME, String.class, DTORequestCashInPre.class, value);</span>
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code &lt;}{@link String }{@code &gt;}}
+     * 
+     */
+    @XmlElementDecl(namespace = &quot;http://request.service.dto.webservices.mts.inswitch.us/xsd&quot;, name = &quot;msisdnSource&quot;, scope = DTORequestCashInPre.class)
+    public JAXBElement&lt;String&gt; createDTORequestCashInPreMsisdnSource(String value) {
+<span class="nc" id="L543">        return new JAXBElement&lt;String&gt;(_DTORequestCashOutConfirmMsisdnSource_QNAME, String.class, DTORequestCashInPre.class, value);</span>
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code &lt;}{@link String }{@code &gt;}}
+     * 
+     */
+    @XmlElementDecl(namespace = &quot;http://request.service.dto.webservices.mts.inswitch.us/xsd&quot;, name = &quot;msisdnTarget&quot;, scope = DTORequestCashInPre.class)
+    public JAXBElement&lt;String&gt; createDTORequestCashInPreMsisdnTarget(String value) {
+<span class="nc" id="L552">        return new JAXBElement&lt;String&gt;(_DTORequestCashOutConfirmMsisdnTarget_QNAME, String.class, DTORequestCashInPre.class, value);</span>
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code &lt;}{@link String }{@code &gt;}}
+     * 
+     */
+    @XmlElementDecl(namespace = &quot;http://request.service.dto.webservices.mts.inswitch.us/xsd&quot;, name = &quot;password&quot;, scope = DTORequestCashInPre.class)
+    public JAXBElement&lt;String&gt; createDTORequestCashInPrePassword(String value) {
+<span class="nc" id="L561">        return new JAXBElement&lt;String&gt;(_DTORequestUtfiAutoReversionPassword_QNAME, String.class, DTORequestCashInPre.class, value);</span>
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code &lt;}{@link String }{@code &gt;}}
+     * 
+     */
+    @XmlElementDecl(namespace = &quot;http://request.service.dto.webservices.mts.inswitch.us/xsd&quot;, name = &quot;pin&quot;, scope = DTORequestCashInPre.class)
+    public JAXBElement&lt;String&gt; createDTORequestCashInPrePin(String value) {
+<span class="nc" id="L570">        return new JAXBElement&lt;String&gt;(_DTORequestCashOutConfirmPin_QNAME, String.class, DTORequestCashInPre.class, value);</span>
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code &lt;}{@link String }{@code &gt;}}
+     * 
+     */
+    @XmlElementDecl(namespace = &quot;http://request.service.dto.webservices.mts.inswitch.us/xsd&quot;, name = &quot;user&quot;, scope = DTORequestCashInPre.class)
+    public JAXBElement&lt;String&gt; createDTORequestCashInPreUser(String value) {
+<span class="nc" id="L579">        return new JAXBElement&lt;String&gt;(_DTORequestUtfiAutoReversionUser_QNAME, String.class, DTORequestCashInPre.class, value);</span>
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code &lt;}{@link String }{@code &gt;}}
+     * 
+     */
+    @XmlElementDecl(namespace = &quot;http://request.service.dto.webservices.mts.inswitch.us/xsd&quot;, name = &quot;utfi&quot;, scope = DTORequestCashInPre.class)
+    public JAXBElement&lt;String&gt; createDTORequestCashInPreUtfi(String value) {
+<span class="nc" id="L588">        return new JAXBElement&lt;String&gt;(_DTORequestUtfiAutoReversionUtfi_QNAME, String.class, DTORequestCashInPre.class, value);</span>
+    }
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.5.201505241946</span></div></body></html>

@@ -1,0 +1,11 @@
+{
+	"billersPlusRequest":
+		{
+			"codigoBarra":"9006194600099000001020161104000000123465099000001O", 
+			"productoUtilityCode" : "90061946",
+			"importe" : "50.0",
+			"codigoMoneda" : "1",
+			"idCaja" : "000001",
+			"idTransaccionFe" : "3423452321"
+		}
+}
