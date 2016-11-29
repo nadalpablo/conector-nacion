@@ -1,4 +1,4 @@
-/home/pablo/workspaces/biller_plus_workspace/nacion-servicios-connector/src/test/java/com/wu/billersplus/conector/service/test/ServiceTest.java
-/home/pablo/workspaces/biller_plus_workspace/nacion-servicios-connector/src/test/java/com/wu/billersplus/conector/transformer/test/BillerTransformerTest.java
-/home/pablo/workspaces/biller_plus_workspace/nacion-servicios-connector/src/test/java/com/wu/billersplus/conector/service/mock/ConnectorServiceMockOffline.java
-/home/pablo/workspaces/biller_plus_workspace/nacion-servicios-connector/src/test/java/com/wu/billersplus/conector/service/mock/BillerServiceMock.java
+/home/pablo/code/conector-nacion/src/test/java/com/wu/billersplus/conector/service/test/ServiceTest.java
+/home/pablo/code/conector-nacion/src/test/java/com/wu/billersplus/conector/service/mock/BillerServiceMock.java
+/home/pablo/code/conector-nacion/src/test/java/com/wu/billersplus/conector/transformer/test/BillerTransformerTest.java
+/home/pablo/code/conector-nacion/src/test/java/com/wu/billersplus/conector/service/mock/ConnectorServiceMockOffline.java

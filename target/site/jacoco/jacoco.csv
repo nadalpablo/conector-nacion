@@ -8,6 +8,7 @@ WU 100BillersPlus :: Connector nacion-servicios-connector,com.wu.billersplus.con
 WU 100BillersPlus :: Connector nacion-servicios-connector,com.wu.billersplus.connector.service,EchoServiceImpl,156,0,8,0,40,0,8,0,4,0
 WU 100BillersPlus :: Connector nacion-servicios-connector,us.inswitch.mts.exceptions.xsd,ServiceException,3,0,0,0,1,0,1,0,1,0
 WU 100BillersPlus :: Connector nacion-servicios-connector,us.inswitch.mts.exceptions.xsd,ObjectFactory,7,0,0,0,3,0,2,0,2,0
+WU 100BillersPlus :: Connector nacion-servicios-connector,com.wu.billersplus.connector.utils,CodigoMoneda,43,0,0,0,8,0,6,0,6,0
 WU 100BillersPlus :: Connector nacion-servicios-connector,com.wu.billersplus.connector.utils,BarcodeUtils,3,29,0,0,1,6,1,6,1,6
 WU 100BillersPlus :: Connector nacion-servicios-connector,us.inswitch.mts.webservices.dto.service.request.xsd,DTORequestCashOutConfirm,87,0,0,0,37,0,25,0,25,0
 WU 100BillersPlus :: Connector nacion-servicios-connector,us.inswitch.mts.webservices.dto.service.request.xsd,DTORequestUtfiAutoReversion,31,0,0,0,13,0,9,0,9,0
@@ -16,7 +17,7 @@ WU 100BillersPlus :: Connector nacion-servicios-connector,us.inswitch.mts.webser
 WU 100BillersPlus :: Connector nacion-servicios-connector,us.inswitch.mts.webservices.dto.service.request.xsd,DTORequestCashOutPre,87,0,0,0,37,0,25,0,25,0
 WU 100BillersPlus :: Connector nacion-servicios-connector,us.inswitch.mts.webservices.dto.service.request.xsd,DTORequestAgentAutoReversion,38,0,0,0,16,0,11,0,11,0
 WU 100BillersPlus :: Connector nacion-servicios-connector,us.inswitch.mts.webservices.dto.service.request.xsd,ObjectFactory,546,0,0,0,76,0,63,0,63,0
-WU 100BillersPlus :: Connector nacion-servicios-connector,com.wu.billersplus.connector.transformers,BillerTransformer,503,7,56,0,120,2,36,2,8,2
+WU 100BillersPlus :: Connector nacion-servicios-connector,com.wu.billersplus.connector.transformers,BillerTransformer,534,7,62,0,108,2,40,2,9,2
 WU 100BillersPlus :: Connector nacion-servicios-connector,us.inswitch.mts.model.xsd,ObjectFactory,36,0,0,0,7,0,5,0,5,0
 WU 100BillersPlus :: Connector nacion-servicios-connector,us.inswitch.mts.model.xsd,TransactionValues,17,0,0,0,7,0,5,0,5,0
 WU 100BillersPlus :: Connector nacion-servicios-connector,us.inswitch.mts.webservices.dto.service.response.xsd,DTOResponseCashInConfirm,42,0,2,0,16,0,11,0,10,0

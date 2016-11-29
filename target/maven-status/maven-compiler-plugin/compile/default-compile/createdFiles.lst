@@ -11,6 +11,7 @@ us/inswitch/mts/webservices/bn/MTSServiceREDPortType.class
 us/inswitch/mts/exceptions/xsd/ObjectFactory.class
 us/inswitch/mts/webservices/bn/MTSServiceREDServiceException.class
 us/inswitch/mts/webservices/dto/service/response/xsd/DTOResponseAgentAutoReversion.class
+com/wu/billersplus/connector/utils/CodigoMoneda.class
 us/inswitch/mts/webservices/bn/CashOutPreRed.class
 us/inswitch/mts/webservices/bn/UtfiAutoReversionRed.class
 us/inswitch/mts/webservices/dto/service/request/xsd/DTORequestCashOutConfirm.class

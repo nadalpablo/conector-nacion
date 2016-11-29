@@ -13,9 +13,11 @@ import com.wu.billersplus.connector.entities.ConnectorResponse;
 import com.wu.billersplus.connector.entities.DeudaParameters;
 import com.wu.billersplus.connector.entities.ParametrosConector;
 import com.wu.billersplus.connector.utils.BarcodeUtils;
+import com.wu.billersplus.connector.utils.CodigoMoneda;
 import com.wu.billersplus.entities.BillersPlusRequest;
 import com.wu.billersplus.entities.ConsultaDeudaResponse;
 import com.wu.billersplus.entities.PagoResponse;
+import com.wu.billersplus.exceptions.BillersPlusException;
 import com.wu.billersplus.framework.cdi.qualifiers.BillerPlusServiceBean;
 import com.wu.billersplus.framework.configuration.PropertyHandler;
 import com.wu.billersplus.framework.configuration.PropertyHelper;
@@ -71,7 +73,7 @@ public class BillerTransformer implements BillerPlusTransformerService {
 
 		if (dRequest.getCodigoMoneda() != null) {
 			requestSoap.setCurrency(requestFactory
-					.createDTORequestCashOutConfirmCurrency(Integer.parseInt(dRequest.getCodigoMoneda())));
+					.createDTORequestCashOutConfirmCurrency(this.getCodigoMoneda(dRequest.getCodigoMoneda())));
 		}
 
 		if (dRequest.getCodigoBarra() != null) {
@@ -112,6 +114,23 @@ public class BillerTransformer implements BillerPlusTransformerService {
 				PropertyHelper.getConnectorCode(), cdRequest.getBillersPlusRequest().getProductoUtilityCode());
 
 		return requestSoap;
+	}
+	
+	private Integer getCodigoMoneda(String codigo) {
+		Integer respuesta = null;
+		
+		for(CodigoMoneda codigoMoneda : CodigoMoneda.values()) {
+			if(codigoMoneda.getCodigo().equals(codigo)) {
+				respuesta = codigoMoneda.getValor();
+			}
+		}
+		
+		if(respuesta == null){
+			throw new BillersPlusException(99001, "Codigo de moneda no soportado");
+		}
+		else {
+			return respuesta;
+		}
 	}
 
 	@Override

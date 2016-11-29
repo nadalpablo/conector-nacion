@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: com.wu.billersplus.conector.service.test.ServiceTest
 -------------------------------------------------------------------------------
-Tests run: 6, Failures: 0, Errors: 0, Skipped: 5, Time elapsed: 2.565 sec - in com.wu.billersplus.conector.service.test.ServiceTest
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 5, Time elapsed: 1.857 sec - in com.wu.billersplus.conector.service.test.ServiceTest

@@ -13,9 +13,11 @@ import com.wu.billersplus.connector.entities.ConnectorResponse;
 import com.wu.billersplus.connector.entities.DeudaParameters;
 import com.wu.billersplus.connector.entities.ParametrosConector;
 import com.wu.billersplus.connector.utils.BarcodeUtils;
+import com.wu.billersplus.connector.utils.CodigoMoneda;
 import com.wu.billersplus.entities.BillersPlusRequest;
 import com.wu.billersplus.entities.ConsultaDeudaResponse;
 import com.wu.billersplus.entities.PagoResponse;
+import com.wu.billersplus.exceptions.BillersPlusException;
 import com.wu.billersplus.framework.cdi.qualifiers.BillerPlusServiceBean;
 import com.wu.billersplus.framework.configuration.PropertyHandler;
 import com.wu.billersplus.framework.configuration.PropertyHelper;
@@ -38,237 +40,254 @@ import us.inswitch.mts.webservices.dto.service.response.xsd.DTOResponseUtfiAutoR
  */
 @Stateless
 @BillerPlusServiceBean
-<span class="fc" id="L41">public class BillerTransformer implements BillerPlusTransformerService {</span>
+<span class="fc" id="L43">public class BillerTransformer implements BillerPlusTransformerService {</span>
 
-<span class="fc" id="L43">	private static Logger logger = LoggerFactory.getLogger(BillerTransformer.class);</span>
+<span class="fc" id="L45">	private static Logger logger = LoggerFactory.getLogger(BillerTransformer.class);</span>
 
 	@Override
 	public ConnectorResponse&lt;ConsultaDeudaResponse&gt; getResponseForConsultaDeuda(ConsultaDeudaResponse response,
 			BillerResponseWrapper&lt;?&gt; consultaResponse) {
-<span class="nc" id="L48">		logger.warn(&quot;Operacion getResponseForConsultaDeuda no implementada&quot;);</span>
-<span class="nc" id="L49">		return null;</span>
+<span class="nc" id="L50">		logger.warn(&quot;Operacion getResponseForConsultaDeuda no implementada&quot;);</span>
+<span class="nc" id="L51">		return null;</span>
 	}
 
 	@Override
 	public Object getDeudaRequest(BillersPlusRequest consulta) {
-<span class="nc" id="L54">		logger.warn(&quot;Operacion getBillersPlusDeuda no implementada&quot;);</span>
-<span class="nc" id="L55">		return null;</span>
+<span class="nc" id="L56">		logger.warn(&quot;Operacion getBillersPlusDeuda no implementada&quot;);</span>
+<span class="nc" id="L57">		return null;</span>
 	}
 
 	@Override
 	public Object getDirectaRequest(ConnectorRequest cdRequest) {
-<span class="nc" id="L60">		BillersPlusRequest dRequest = cdRequest.getBillersPlusRequest();</span>
+<span class="nc" id="L62">		BillersPlusRequest dRequest = cdRequest.getBillersPlusRequest();</span>
 
-<span class="nc" id="L62">		ObjectFactory requestFactory = new ObjectFactory();</span>
-<span class="nc" id="L63">		DTORequestCashOutConfirm requestSoap = requestFactory.createDTORequestCashOutConfirm();</span>
+<span class="nc" id="L64">		ObjectFactory requestFactory = new ObjectFactory();</span>
+<span class="nc" id="L65">		DTORequestCashOutConfirm requestSoap = requestFactory.createDTORequestCashOutConfirm();</span>
 
-<span class="nc" id="L65">		logger.debug(&quot;Transformando request de DIRECTA con [CodigoProducto = {}]&quot;, dRequest.getProductoUtilityCode());</span>
+<span class="nc" id="L67">		logger.debug(&quot;Transformando request de DIRECTA con [CodigoProducto = {}]&quot;, dRequest.getProductoUtilityCode());</span>
 
-<span class="nc bnc" id="L67" title="All 2 branches missed.">		if (dRequest.getImporte() != null) {</span>
-<span class="nc" id="L68">			requestSoap.setAmount(requestFactory</span>
-<span class="nc" id="L69">					.createDTORequestCashOutConfirmAmount(Double.parseDouble(dRequest.getImporte().toString())));</span>
+<span class="nc bnc" id="L69" title="All 2 branches missed.">		if (dRequest.getImporte() != null) {</span>
+<span class="nc" id="L70">			requestSoap.setAmount(requestFactory</span>
+					.createDTORequestCashOutConfirmAmount(Double.parseDouble(dRequest.getImporte().toString())));
 		}
 
-<span class="nc bnc" id="L72" title="All 2 branches missed.">		if (dRequest.getCodigoMoneda() != null) {</span>
-<span class="nc" id="L73">			requestSoap.setCurrency(requestFactory</span>
-<span class="nc" id="L74">					.createDTORequestCashOutConfirmCurrency(Integer.parseInt(dRequest.getCodigoMoneda())));</span>
+<span class="nc bnc" id="L74" title="All 2 branches missed.">		if (dRequest.getCodigoMoneda() != null) {</span>
+<span class="nc" id="L75">			requestSoap.setCurrency(requestFactory</span>
+					.createDTORequestCashOutConfirmCurrency(this.getCodigoMoneda(dRequest.getCodigoMoneda())));
 		}
 
-<span class="nc bnc" id="L77" title="All 2 branches missed.">		if (dRequest.getCodigoBarra() != null) {</span>
-<span class="nc" id="L78">			requestSoap.setDocument(requestFactory.createDTORequestCashOutConfirmDocument(</span>
-<span class="nc" id="L79">					BarcodeUtils.getNumeroDocumento(dRequest.getCodigoBarra())));</span>
+<span class="nc bnc" id="L79" title="All 2 branches missed.">		if (dRequest.getCodigoBarra() != null) {</span>
+<span class="nc" id="L80">			requestSoap.setDocument(requestFactory.createDTORequestCashOutConfirmDocument(</span>
+					BarcodeUtils.getNumeroDocumento(dRequest.getCodigoBarra())));
 
-<span class="nc" id="L81">			requestSoap.setMsisdnSource(requestFactory.createDTORequestCashOutConfirmMsisdnSource(</span>
-<span class="nc" id="L82">					BarcodeUtils.getNumeroCelular(dRequest.getCodigoBarra())));</span>
+<span class="nc" id="L83">			requestSoap.setMsisdnSource(requestFactory.createDTORequestCashOutConfirmMsisdnSource(</span>
+					BarcodeUtils.getNumeroCelular(dRequest.getCodigoBarra())));
 
-<span class="nc" id="L84">			requestSoap.setOtp(requestFactory</span>
-<span class="nc" id="L85">					.createDTORequestCashOutConfirmOtp(BarcodeUtils.getNumeroPin(dRequest.getCodigoBarra())));</span>
+<span class="nc" id="L86">			requestSoap.setOtp(requestFactory</span>
+					.createDTORequestCashOutConfirmOtp(BarcodeUtils.getNumeroPin(dRequest.getCodigoBarra())));
 		}
 
-<span class="nc bnc" id="L88" title="All 4 branches missed.">		if (dRequest.getIdCaja() != null &amp;&amp; dRequest.getIdTransaccionFe() != null) {</span>
-<span class="nc" id="L89">			requestSoap.setUtfi(requestFactory.createDTORequestCashOutConfirmUtfi(</span>
-<span class="nc" id="L90">					dRequest.getIdCaja().toString() + dRequest.getIdTransaccionFe().toString()));</span>
+<span class="nc bnc" id="L90" title="All 4 branches missed.">		if (dRequest.getIdCaja() != null &amp;&amp; dRequest.getIdTransaccionFe() != null) {</span>
+<span class="nc" id="L91">			requestSoap.setUtfi(requestFactory.createDTORequestCashOutConfirmUtfi(</span>
+					dRequest.getIdCaja().toString() + dRequest.getIdTransaccionFe().toString()));
 		}
 
-<span class="nc" id="L93">		requestSoap.setBrandId(requestFactory.createDTORequestCashOutConfirmBrandId(</span>
-<span class="nc" id="L94">				Integer.parseInt(PropertyHandler.getPropertyString(ParametrosConector.BRANDID_PROPERTY + &quot;.value&quot;))));</span>
+<span class="nc" id="L95">		requestSoap.setBrandId(requestFactory.createDTORequestCashOutConfirmBrandId(</span>
+				Integer.parseInt(PropertyHandler.getPropertyString(ParametrosConector.BRANDID_PROPERTY + &quot;.value&quot;))));
 
-<span class="nc" id="L96">		requestSoap.setLanguage(requestFactory.createDTORequestCashOutConfirmLanguage(</span>
-<span class="nc" id="L97">				PropertyHandler.getPropertyString(ParametrosConector.LANGUAGE_PROPERTY + &quot;.value&quot;)));</span>
+<span class="nc" id="L98">		requestSoap.setLanguage(requestFactory.createDTORequestCashOutConfirmLanguage(</span>
+				PropertyHandler.getPropertyString(ParametrosConector.LANGUAGE_PROPERTY + &quot;.value&quot;)));
 
-<span class="nc" id="L99">		requestSoap.setMsisdnTarget(requestFactory.createDTORequestCashOutConfirmMsisdnTarget(</span>
-<span class="nc" id="L100">				PropertyHandler.getPropertyString(ParametrosConector.MSISDNTARGET_PROPERTY + &quot;.value&quot;)));</span>
+<span class="nc" id="L101">		requestSoap.setMsisdnTarget(requestFactory.createDTORequestCashOutConfirmMsisdnTarget(</span>
+				PropertyHandler.getPropertyString(ParametrosConector.MSISDNTARGET_PROPERTY + &quot;.value&quot;)));
 
-<span class="nc" id="L102">		requestSoap.setPassword(requestFactory.createDTORequestCashOutConfirmPassword(</span>
-<span class="nc" id="L103">				PropertyHandler.getPropertyString(ParametrosConector.PASSWORD_PROPERTY + &quot;.value&quot;)));</span>
+<span class="nc" id="L104">		requestSoap.setPassword(requestFactory.createDTORequestCashOutConfirmPassword(</span>
+				PropertyHandler.getPropertyString(ParametrosConector.PASSWORD_PROPERTY + &quot;.value&quot;)));
 
-<span class="nc" id="L105">		requestSoap.setPin(requestFactory.createDTORequestCashOutConfirmPin(</span>
-<span class="nc" id="L106">				PropertyHandler.getPropertyString(ParametrosConector.PIN_PROPERTY + &quot;.value&quot;)));</span>
+<span class="nc" id="L107">		requestSoap.setPin(requestFactory.createDTORequestCashOutConfirmPin(</span>
+				PropertyHandler.getPropertyString(ParametrosConector.PIN_PROPERTY + &quot;.value&quot;)));
 
-<span class="nc" id="L108">		requestSoap.setUser(requestFactory.createDTORequestCashOutConfirmUser(</span>
-<span class="nc" id="L109">				PropertyHandler.getPropertyString(ParametrosConector.USER_PROPERTY + &quot;.value&quot;)));</span>
+<span class="nc" id="L110">		requestSoap.setUser(requestFactory.createDTORequestCashOutConfirmUser(</span>
+				PropertyHandler.getPropertyString(ParametrosConector.USER_PROPERTY + &quot;.value&quot;)));
 
-<span class="nc" id="L111">		logger.info(&quot;[Conector Codigo {}] Ejecutando DIRECTA con [CodigoProducto {}]&quot;,</span>
-<span class="nc" id="L112">				PropertyHelper.getConnectorCode(), cdRequest.getBillersPlusRequest().getProductoUtilityCode());</span>
+<span class="nc" id="L113">		logger.info(&quot;[Conector Codigo {}] Ejecutando DIRECTA con [CodigoProducto {}]&quot;,</span>
+				PropertyHelper.getConnectorCode(), cdRequest.getBillersPlusRequest().getProductoUtilityCode());
 
-<span class="nc" id="L114">		return requestSoap;</span>
+<span class="nc" id="L116">		return requestSoap;</span>
+	}
+	
+	private Integer getCodigoMoneda(String codigo) {
+<span class="nc" id="L120">		Integer respuesta = null;</span>
+		
+<span class="nc bnc" id="L122" title="All 2 branches missed.">		for(CodigoMoneda codigoMoneda : CodigoMoneda.values()) {</span>
+<span class="nc bnc" id="L123" title="All 2 branches missed.">			if(codigoMoneda.getCodigo().equals(codigo)) {</span>
+<span class="nc" id="L124">				respuesta = codigoMoneda.getValor();</span>
+			}
+		}
+		
+<span class="nc bnc" id="L128" title="All 2 branches missed.">		if(respuesta == null){</span>
+<span class="nc" id="L129">			throw new BillersPlusException(99001, &quot;Codigo de moneda no soportado&quot;);</span>
+		}
+		else {
+<span class="nc" id="L132">			return respuesta;</span>
+		}
 	}
 
 	@Override
 	public ConnectorResponse&lt;PagoResponse&gt; getResponseForDirecta(PagoResponse pago, BillerResponseWrapper&lt;?&gt; directa) {
-<span class="nc bnc" id="L119" title="All 2 branches missed.">		if (directa == null) {</span>
-<span class="nc" id="L120">			logger.warn(&quot;La respuesta de la consulta es nula&quot;);</span>
-<span class="nc" id="L121">			return new ConnectorResponse&lt;PagoResponse&gt;(pago, null, null, null);</span>
+<span class="nc bnc" id="L138" title="All 2 branches missed.">		if (directa == null) {</span>
+<span class="nc" id="L139">			logger.warn(&quot;La respuesta de la consulta es nula&quot;);</span>
+<span class="nc" id="L140">			return new ConnectorResponse&lt;PagoResponse&gt;(pago, null, null, null);</span>
 		}
 
-<span class="nc bnc" id="L124" title="All 2 branches missed.">		if (directa.getResponseBiller() == null) {</span>
-<span class="nc" id="L125">			logger.warn(&quot;La respuesta wrappeada del biller es nula&quot;);</span>
-<span class="nc" id="L126">			return new ConnectorResponse&lt;PagoResponse&gt;(pago, null, directa.getRequestBillerTrace(),</span>
-<span class="nc" id="L127">					directa.getResponseBillerTrace());</span>
+<span class="nc bnc" id="L143" title="All 2 branches missed.">		if (directa.getResponseBiller() == null) {</span>
+<span class="nc" id="L144">			logger.warn(&quot;La respuesta wrappeada del biller es nula&quot;);</span>
+<span class="nc" id="L145">			return new ConnectorResponse&lt;PagoResponse&gt;(pago, null, directa.getRequestBillerTrace(),</span>
+					directa.getResponseBillerTrace());
 		}
 
-<span class="nc" id="L130">		DTOResponseCashOutConfirm response = (DTOResponseCashOutConfirm) directa.getResponseBiller();</span>
+<span class="nc" id="L149">		DTOResponseCashOutConfirm response = (DTOResponseCashOutConfirm) directa.getResponseBiller();</span>
 
-<span class="nc" id="L132">		logger.debug(&quot;Transformando respuesta de DIRECTA con [CodigoProducto = {}]&quot;, pago.getProductoUtilityCode());</span>
+<span class="nc" id="L151">		logger.debug(&quot;Transformando respuesta de DIRECTA con [CodigoProducto = {}]&quot;, pago.getProductoUtilityCode());</span>
 
-<span class="nc bnc" id="L134" title="All 2 branches missed.">		if (response.getCodeErrorId() != null) {</span>
-<span class="nc" id="L135">			Integer errorCode = Integer.parseInt(response.getCodeErrorId().getValue());</span>
+<span class="nc bnc" id="L153" title="All 2 branches missed.">		if (response.getCodeErrorId() != null) {</span>
+<span class="nc" id="L154">			Integer errorCode = Integer.parseInt(response.getCodeErrorId().getValue());</span>
 			// El '-1' implica para el biller transaccion exitosa, lo que equivale a '0' en billers-plus 
-<span class="nc bnc" id="L137" title="All 2 branches missed.">			pago.setCodigoError(errorCode == -1 ? 0 : errorCode);</span>
+<span class="nc bnc" id="L156" title="All 2 branches missed.">			pago.setCodigoError(errorCode == -1 ? 0 : errorCode);</span>
 		}
 
-<span class="nc bnc" id="L140" title="All 2 branches missed.">		if (response.getResultCode() != null) {</span>
-<span class="nc" id="L141">			pago.setNumeroOperacionBiller(response.getResultCode().toString());</span>
+<span class="nc bnc" id="L159" title="All 2 branches missed.">		if (response.getResultCode() != null) {</span>
+<span class="nc" id="L160">			pago.setNumeroOperacionBiller(response.getResultCode().toString());</span>
 		}
 
-<span class="nc bnc" id="L144" title="All 2 branches missed.">		if (response.getResultText() != null) {</span>
-<span class="nc" id="L145">			pago.setDescripcionError(response.getResultText().getValue());</span>
+<span class="nc bnc" id="L163" title="All 2 branches missed.">		if (response.getResultText() != null) {</span>
+<span class="nc" id="L164">			pago.setDescripcionError(response.getResultText().getValue());</span>
 		}
 
-<span class="nc" id="L148">		Map&lt;String, String&gt; datoAdicional = new HashMap&lt;String, String&gt;();</span>
+<span class="nc" id="L167">		Map&lt;String, String&gt; datoAdicional = new HashMap&lt;String, String&gt;();</span>
 
-<span class="nc bnc" id="L150" title="All 4 branches missed.">		if (response.getTransactionValues() != null &amp;&amp; !response.getTransactionValues().isEmpty()) {</span>
-<span class="nc bnc" id="L151" title="All 2 branches missed.">			for (TransactionValues transactionValue : response.getTransactionValues()) {</span>
-<span class="nc bnc" id="L152" title="All 2 branches missed.">				if (transactionValue != null) {</span>
-<span class="nc" id="L153">					datoAdicional.put(transactionValue.getKey().getValue(), transactionValue.getValue().getValue());</span>
+<span class="nc bnc" id="L169" title="All 4 branches missed.">		if (response.getTransactionValues() != null &amp;&amp; !response.getTransactionValues().isEmpty()) {</span>
+<span class="nc bnc" id="L170" title="All 2 branches missed.">			for (TransactionValues transactionValue : response.getTransactionValues()) {</span>
+<span class="nc bnc" id="L171" title="All 2 branches missed.">				if (transactionValue != null) {</span>
+<span class="nc" id="L172">					datoAdicional.put(transactionValue.getKey().getValue(), transactionValue.getValue().getValue());</span>
 				}
-			}
+<span class="nc" id="L174">			}</span>
 		}
 
-<span class="nc bnc" id="L158" title="All 2 branches missed.">		if (response.getUtfi() != null) {</span>
-<span class="nc" id="L159">			datoAdicional.put(DeudaParameters.UTFI, response.getUtfi().getValue());</span>
+<span class="nc bnc" id="L177" title="All 2 branches missed.">		if (response.getUtfi() != null) {</span>
+<span class="nc" id="L178">			datoAdicional.put(DeudaParameters.UTFI, response.getUtfi().getValue());</span>
 		}
 
-<span class="nc" id="L162">		ConnectorResponse&lt;PagoResponse&gt; cResponse = new ConnectorResponse&lt;PagoResponse&gt;();</span>
-<span class="nc" id="L163">		cResponse.setResponse(pago);</span>
+<span class="nc" id="L181">		ConnectorResponse&lt;PagoResponse&gt; cResponse = new ConnectorResponse&lt;PagoResponse&gt;();</span>
+<span class="nc" id="L182">		cResponse.setResponse(pago);</span>
 
-<span class="nc" id="L165">		logger.info(&quot;Tamaño del mapa de parametros_adicionales_directa {}&quot;, datoAdicional.size());</span>
+<span class="nc" id="L184">		logger.info(&quot;Tamaño del mapa de parametros_adicionales_directa {}&quot;, datoAdicional.size());</span>
 
-<span class="nc" id="L167">		cResponse.setDatosAdicionalesDirecta(datoAdicional);</span>
-<span class="nc" id="L168">		cResponse.setRequestOriginalBiller(directa.getRequestBillerTrace());</span>
-<span class="nc" id="L169">		cResponse.setResponseOriginalBiller(directa.getResponseBillerTrace());</span>
+<span class="nc" id="L186">		cResponse.setDatosAdicionalesDirecta(datoAdicional);</span>
+<span class="nc" id="L187">		cResponse.setRequestOriginalBiller(directa.getRequestBillerTrace());</span>
+<span class="nc" id="L188">		cResponse.setResponseOriginalBiller(directa.getResponseBillerTrace());</span>
 
-<span class="nc" id="L171">		logger.info(&quot;[Conector Codigo {}] Ejecutando ANULACION con [CodigoProducto {}]&quot;,</span>
-<span class="nc" id="L172">				PropertyHelper.getConnectorCode(), pago.getProductoUtilityCode());</span>
+<span class="nc" id="L190">		logger.info(&quot;[Conector Codigo {}] Ejecutando ANULACION con [CodigoProducto {}]&quot;,</span>
+				PropertyHelper.getConnectorCode(), pago.getProductoUtilityCode());
 
-<span class="nc" id="L174">		return cResponse;</span>
+<span class="nc" id="L193">		return cResponse;</span>
 
 	}
 
 	@Override
 	public Object getReversaRequest(ConnectorRequest request) {
-<span class="nc" id="L180">		ObjectFactory requestFactory = new ObjectFactory();</span>
-<span class="nc" id="L181">		DTORequestUtfiAutoReversion requestSoap = requestFactory.createDTORequestUtfiAutoReversion();</span>
+<span class="nc" id="L199">		ObjectFactory requestFactory = new ObjectFactory();</span>
+<span class="nc" id="L200">		DTORequestUtfiAutoReversion requestSoap = requestFactory.createDTORequestUtfiAutoReversion();</span>
 
-<span class="nc" id="L183">		logger.debug(&quot;Transformando request de ANULACION con  [CodigoProducto = {}]&quot;,</span>
-<span class="nc" id="L184">				request.getBillersPlusRequest().getProductoUtilityCode());</span>
+<span class="nc" id="L202">		logger.debug(&quot;Transformando request de ANULACION con  [CodigoProducto = {}]&quot;,</span>
+				request.getBillersPlusRequest().getProductoUtilityCode());
 
-<span class="nc" id="L186">		requestSoap.setLanguage(requestFactory.createDTORequestUtfiAutoReversionLanguage(</span>
-<span class="nc" id="L187">				PropertyHandler.getPropertyString(ParametrosConector.LANGUAGE_PROPERTY + &quot;.value&quot;)));</span>
+<span class="nc" id="L205">		requestSoap.setLanguage(requestFactory.createDTORequestUtfiAutoReversionLanguage(</span>
+				PropertyHandler.getPropertyString(ParametrosConector.LANGUAGE_PROPERTY + &quot;.value&quot;)));
 
-<span class="nc" id="L189">		requestSoap.setPassword(requestFactory.createDTORequestUtfiAutoReversionPassword(</span>
-<span class="nc" id="L190">				PropertyHandler.getPropertyString(ParametrosConector.PASSWORD_PROPERTY + &quot;.value&quot;)));</span>
+<span class="nc" id="L208">		requestSoap.setPassword(requestFactory.createDTORequestUtfiAutoReversionPassword(</span>
+				PropertyHandler.getPropertyString(ParametrosConector.PASSWORD_PROPERTY + &quot;.value&quot;)));
 
-<span class="nc" id="L192">		requestSoap.setUser(requestFactory.createDTORequestUtfiAutoReversionUser(</span>
-<span class="nc" id="L193">				PropertyHandler.getPropertyString(ParametrosConector.USER_PROPERTY + &quot;.value&quot;)));</span>
+<span class="nc" id="L211">		requestSoap.setUser(requestFactory.createDTORequestUtfiAutoReversionUser(</span>
+				PropertyHandler.getPropertyString(ParametrosConector.USER_PROPERTY + &quot;.value&quot;)));
 
-<span class="nc bnc" id="L195" title="All 2 branches missed.">		if (request.getDatosAdicionalesAnulacion() != null) {</span>
-<span class="nc" id="L196">			requestSoap.setUtfi(requestFactory.createDTORequestUtfiAutoReversionUtfi(</span>
-<span class="nc" id="L197">					request.getDatosAdicionalesAnulacion().get(DeudaParameters.UTFI)));</span>
+<span class="nc bnc" id="L214" title="All 2 branches missed.">		if (request.getDatosAdicionalesAnulacion() != null) {</span>
+<span class="nc" id="L215">			requestSoap.setUtfi(requestFactory.createDTORequestUtfiAutoReversionUtfi(</span>
+					request.getDatosAdicionalesAnulacion().get(DeudaParameters.UTFI)));
 		}
 
-<span class="nc" id="L200">		return requestSoap;</span>
+<span class="nc" id="L219">		return requestSoap;</span>
 	}
 
 	@Override
 	public ConnectorResponse&lt;PagoResponse&gt; getResponseForReversa(PagoResponse pago, BillerResponseWrapper&lt;?&gt; reversa) {
-<span class="nc bnc" id="L205" title="All 2 branches missed.">		if (reversa == null) {</span>
-<span class="nc" id="L206">			logger.warn(&quot;La respuesta de la consulta es nula&quot;);</span>
-<span class="nc" id="L207">			return new ConnectorResponse&lt;PagoResponse&gt;(pago, null, null, null);</span>
+<span class="nc bnc" id="L224" title="All 2 branches missed.">		if (reversa == null) {</span>
+<span class="nc" id="L225">			logger.warn(&quot;La respuesta de la consulta es nula&quot;);</span>
+<span class="nc" id="L226">			return new ConnectorResponse&lt;PagoResponse&gt;(pago, null, null, null);</span>
 		}
 		
-<span class="nc bnc" id="L210" title="All 2 branches missed.">		if (reversa.getResponseBiller() == null) {</span>
-<span class="nc" id="L211">			logger.warn(&quot;La respuesta wrappeada del biller es nula&quot;);</span>
-<span class="nc" id="L212">			return new ConnectorResponse&lt;PagoResponse&gt;(pago, null, reversa.getRequestBillerTrace(),</span>
-<span class="nc" id="L213">					reversa.getResponseBillerTrace());</span>
+<span class="nc bnc" id="L229" title="All 2 branches missed.">		if (reversa.getResponseBiller() == null) {</span>
+<span class="nc" id="L230">			logger.warn(&quot;La respuesta wrappeada del biller es nula&quot;);</span>
+<span class="nc" id="L231">			return new ConnectorResponse&lt;PagoResponse&gt;(pago, null, reversa.getRequestBillerTrace(),</span>
+					reversa.getResponseBillerTrace());
 		}
 
-<span class="nc" id="L216">		DTOResponseUtfiAutoReversion response = (DTOResponseUtfiAutoReversion) reversa.getResponseBiller();</span>
+<span class="nc" id="L235">		DTOResponseUtfiAutoReversion response = (DTOResponseUtfiAutoReversion) reversa.getResponseBiller();</span>
 
-<span class="nc" id="L218">		logger.debug(&quot;Transformando respuesta de ANULACION con [CodigoProducto = {}]&quot;, pago.getProductoUtilityCode());</span>
+<span class="nc" id="L237">		logger.debug(&quot;Transformando respuesta de ANULACION con [CodigoProducto = {}]&quot;, pago.getProductoUtilityCode());</span>
 
-<span class="nc bnc" id="L220" title="All 2 branches missed.">		if (response.getCodeErrorId() != null) {</span>
-<span class="nc" id="L221">			Integer errorCode = Integer.parseInt(response.getCodeErrorId().getValue());</span>
+<span class="nc bnc" id="L239" title="All 2 branches missed.">		if (response.getCodeErrorId() != null) {</span>
+<span class="nc" id="L240">			Integer errorCode = Integer.parseInt(response.getCodeErrorId().getValue());</span>
 			// El '-1' implica para el biller transaccion exitosa, lo que equivale a '0' en billers-plus 
-<span class="nc bnc" id="L223" title="All 2 branches missed.">			pago.setCodigoError(errorCode == -1 ? 0 : errorCode);</span>
+<span class="nc bnc" id="L242" title="All 2 branches missed.">			pago.setCodigoError(errorCode == -1 ? 0 : errorCode);</span>
 		}
 
-<span class="nc bnc" id="L226" title="All 2 branches missed.">		if (response.getResultCode() != null) {</span>
-<span class="nc" id="L227">			pago.setNumeroOperacionBiller(response.getResultCode().toString());</span>
+<span class="nc bnc" id="L245" title="All 2 branches missed.">		if (response.getResultCode() != null) {</span>
+<span class="nc" id="L246">			pago.setNumeroOperacionBiller(response.getResultCode().toString());</span>
 		}
 
-<span class="nc bnc" id="L230" title="All 2 branches missed.">		if (response.getResultText() != null) {</span>
-<span class="nc" id="L231">			pago.setDescripcionError(response.getResultText().getValue());</span>
+<span class="nc bnc" id="L249" title="All 2 branches missed.">		if (response.getResultText() != null) {</span>
+<span class="nc" id="L250">			pago.setDescripcionError(response.getResultText().getValue());</span>
 		}
 
-<span class="nc" id="L234">		Map&lt;String, String&gt; datoAdicional = new HashMap&lt;String, String&gt;();</span>
+<span class="nc" id="L253">		Map&lt;String, String&gt; datoAdicional = new HashMap&lt;String, String&gt;();</span>
 
-<span class="nc bnc" id="L236" title="All 4 branches missed.">		if (response.getTransactionValues() != null &amp;&amp; !response.getTransactionValues().isEmpty()) {</span>
-<span class="nc bnc" id="L237" title="All 2 branches missed.">			for (TransactionValues transactionValue : response.getTransactionValues()) {</span>
-<span class="nc bnc" id="L238" title="All 2 branches missed.">				if (transactionValue != null) {</span>
-<span class="nc" id="L239">					datoAdicional.put(transactionValue.getKey().getValue(), transactionValue.getValue().getValue());</span>
+<span class="nc bnc" id="L255" title="All 4 branches missed.">		if (response.getTransactionValues() != null &amp;&amp; !response.getTransactionValues().isEmpty()) {</span>
+<span class="nc bnc" id="L256" title="All 2 branches missed.">			for (TransactionValues transactionValue : response.getTransactionValues()) {</span>
+<span class="nc bnc" id="L257" title="All 2 branches missed.">				if (transactionValue != null) {</span>
+<span class="nc" id="L258">					datoAdicional.put(transactionValue.getKey().getValue(), transactionValue.getValue().getValue());</span>
 				}
-			}
+<span class="nc" id="L260">			}</span>
 		}
 
-<span class="nc bnc" id="L244" title="All 2 branches missed.">		if (response.getUtfi() != null) {</span>
-<span class="nc" id="L245">			datoAdicional.put(DeudaParameters.UTFI, response.getUtfi().getValue());</span>
+<span class="nc bnc" id="L263" title="All 2 branches missed.">		if (response.getUtfi() != null) {</span>
+<span class="nc" id="L264">			datoAdicional.put(DeudaParameters.UTFI, response.getUtfi().getValue());</span>
 		}
 
-<span class="nc" id="L248">		ConnectorResponse&lt;PagoResponse&gt; cResponse = new ConnectorResponse&lt;PagoResponse&gt;();</span>
-<span class="nc" id="L249">		cResponse.setResponse(pago);</span>
+<span class="nc" id="L267">		ConnectorResponse&lt;PagoResponse&gt; cResponse = new ConnectorResponse&lt;PagoResponse&gt;();</span>
+<span class="nc" id="L268">		cResponse.setResponse(pago);</span>
 
-<span class="nc" id="L251">		logger.info(&quot;Tamaño del mapa de parametros_adicionales_directa {}&quot;, datoAdicional.size());</span>
+<span class="nc" id="L270">		logger.info(&quot;Tamaño del mapa de parametros_adicionales_directa {}&quot;, datoAdicional.size());</span>
 
-<span class="nc" id="L253">		cResponse.setDatosAdicionalesDirecta(datoAdicional);</span>
-<span class="nc" id="L254">		cResponse.setRequestOriginalBiller(reversa.getRequestBillerTrace());</span>
-<span class="nc" id="L255">		cResponse.setResponseOriginalBiller(reversa.getResponseBillerTrace());</span>
-<span class="nc" id="L256">		cResponse.setResponse(pago);</span>
+<span class="nc" id="L272">		cResponse.setDatosAdicionalesDirecta(datoAdicional);</span>
+<span class="nc" id="L273">		cResponse.setRequestOriginalBiller(reversa.getRequestBillerTrace());</span>
+<span class="nc" id="L274">		cResponse.setResponseOriginalBiller(reversa.getResponseBillerTrace());</span>
+<span class="nc" id="L275">		cResponse.setResponse(pago);</span>
 
-<span class="nc" id="L258">		return cResponse;</span>
+<span class="nc" id="L277">		return cResponse;</span>
 	}
 
 	@Override
 	public Object getConsultaEstadoRequest(ConnectorRequest request) {
-<span class="nc" id="L263">		logger.warn(&quot;Operacion getConsultaEstadoRequest no implementada&quot;);</span>
-<span class="nc" id="L264">		return null;</span>
+<span class="nc" id="L282">		logger.warn(&quot;Operacion getConsultaEstadoRequest no implementada&quot;);</span>
+<span class="nc" id="L283">		return null;</span>
 	}
 
 	@Override
 	public ConnectorResponse&lt;PagoResponse&gt; getResponseForConsultaEstado(PagoResponse pago,
 			BillerResponseWrapper&lt;?&gt; obj) {
-<span class="nc" id="L270">		logger.warn(&quot;Operacion getResponseForConsultaEstado no implementada&quot;);</span>
-<span class="nc" id="L271">		return null;</span>
+<span class="nc" id="L289">		logger.warn(&quot;Operacion getResponseForConsultaEstado no implementada&quot;);</span>
+<span class="nc" id="L290">		return null;</span>
 	}
 
 }
